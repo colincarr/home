@@ -1,0 +1,7 @@
+"; -*- Mode: Lisp -*-"
+(SYSTEM:INIT-FASL :VERSION 42)
+(SETQ SYSTEM:*SOURCE* #P"/Users/cpc26/src/abcl/src/org/armedbear/lisp/ldiff.lisp")
+
+(SETQ SYSTEM:*FASL-LOADER* (SYSTEM::MAKE-FASL-CLASS-LOADER "org.armedbear.lisp.ldiff"))
+(SYSTEM:%IN-PACKAGE "SYSTEM")
+(FSET 'LDIFF (GET-FASL-FUNCTION *FASL-LOADER* 0) 1661 '(LIST OBJECT) NIL)

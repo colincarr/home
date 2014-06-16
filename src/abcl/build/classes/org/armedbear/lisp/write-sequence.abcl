@@ -1,0 +1,8 @@
+"; -*- Mode: Lisp -*-"
+(SYSTEM:INIT-FASL :VERSION 42)
+(SETQ SYSTEM:*SOURCE* #P"/Users/cpc26/src/abcl/src/org/armedbear/lisp/write-sequence.lisp")
+
+(SETQ SYSTEM:*FASL-LOADER* (SYSTEM::MAKE-FASL-CLASS-LOADER "org.armedbear.lisp.write_sequence"))
+(SYSTEM:%IN-PACKAGE "SYSTEM")
+(FSET 'WRITE-SEQUENCE (GET-FASL-FUNCTION *FASL-LOADER* 0) 1653 '(SEQUENCE STREAM 
+&KEY (START 0) END) NIL)

@@ -1,0 +1,8 @@
+"; -*- Mode: Lisp -*-"
+(SYSTEM:INIT-FASL :VERSION 42)
+(SETQ SYSTEM:*SOURCE* #P"/Users/cpc26/src/abcl/src/org/armedbear/lisp/ensure-directories-exist.lisp")
+
+(SETQ SYSTEM:*FASL-LOADER* (SYSTEM::MAKE-FASL-CLASS-LOADER "org.armedbear.lisp.ensure_directories_exist"))
+(SYSTEM:%IN-PACKAGE "SYSTEM")
+(FSET 'ENSURE-DIRECTORIES-EXIST (GET-FASL-FUNCTION *FASL-LOADER* 0) 1699 '(PATHSPEC 
+&KEY (VERBOSE NIL)) NIL)

@@ -1,0 +1,8 @@
+"; -*- Mode: Lisp -*-"
+(SYSTEM:INIT-FASL :VERSION 42)
+(SETQ SYSTEM:*SOURCE* #P"/Users/cpc26/src/abcl/src/org/armedbear/lisp/disassemble.lisp")
+(SETQ SYSTEM::*FASL-UNINTERNED-SYMBOLS* #(#:CLOS))
+(SETQ SYSTEM:*FASL-LOADER* (SYSTEM::MAKE-FASL-CLASS-LOADER "org.armedbear.lisp.disassemble"))
+(SYSTEM:%IN-PACKAGE "SYSTEM")
+(REQUIRE '#0?)
+(FSET 'DISASSEMBLE (GET-FASL-FUNCTION *FASL-LOADER* 0) 1659 '(ARG) NIL)

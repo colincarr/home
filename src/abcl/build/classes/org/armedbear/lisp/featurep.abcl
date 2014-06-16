@@ -1,0 +1,9 @@
+"; -*- Mode: Lisp -*-"
+(SYSTEM:INIT-FASL :VERSION 42)
+(SETQ SYSTEM:*SOURCE* #P"/Users/cpc26/src/abcl/src/org/armedbear/lisp/featurep.lisp")
+
+(SETQ SYSTEM:*FASL-LOADER* (SYSTEM::MAKE-FASL-CLASS-LOADER "org.armedbear.lisp.featurep"))
+(SYSTEM:%IN-PACKAGE "EXTENSIONS")
+(EXPORT 'FEATUREP)
+(SYSTEM:FSET 'FEATUREP (SYSTEM::GET-FASL-FUNCTION SYSTEM:*FASL-LOADER* 0) 1686 '(FORM) 
+NIL)

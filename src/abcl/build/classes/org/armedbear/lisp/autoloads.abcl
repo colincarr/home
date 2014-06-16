@@ -1,0 +1,7 @@
+"; -*- Mode: Lisp -*-"
+(SYSTEM:INIT-FASL :VERSION 42)
+(SETQ SYSTEM:*SOURCE* #P"/Users/cpc26/src/abcl/src/org/armedbear/lisp/autoloads.lisp")
+
+
+(SYSTEM:%IN-PACKAGE "SYSTEM")
+(AUTOLOAD 'SIMPLE-FORMAT "format")

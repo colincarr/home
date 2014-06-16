@@ -1,0 +1,33 @@
+"; -*- Mode: Lisp -*-"
+(SYSTEM:INIT-FASL :VERSION 42)
+(SETQ SYSTEM:*SOURCE* #P"/Users/cpc26/src/abcl/src/org/armedbear/lisp/digest.lisp")
+
+(SETQ SYSTEM:*FASL-LOADER* (SYSTEM::MAKE-FASL-CLASS-LOADER "org.armedbear.lisp.digest"))
+(REQUIRE :JAVA)
+(SYSTEM:%IN-PACKAGE "SYSTEM")
+(FSET 'ASCIIFY (GET-FASL-FUNCTION *FASL-LOADER* 0) 1593 '(DIGEST) NIL)
+(FSET 'SHA256 (GET-FASL-FUNCTION *FASL-LOADER* 2) 1754 '(&REST PATHS-OR-STRINGS) 
+"Returned ASCIIfied representation of SHA256 digest of byte-based resource at PATHS-OR-STRINGs.")
+(FUNCALL (GET-FASL-FUNCTION *FASL-LOADER* 3))
+(FSET 'DIGEST-PATH (GET-FASL-FUNCTION *FASL-LOADER* 4) 3501 '(PATH) NIL)
+(DEFVAR *DIGEST-TYPES* '((SHA-1 . "SHA-1") (SHA-256 . "SHA-256") (SHA-512 . "SHA-512")) 
+"Normalization of cryptographic digest naming.")
+(DEFCONSTANT +BYTE-BUFFER-REWIND+ (JAVA:JMETHOD "java.nio.ByteBuffer" "rewind"))
+(DEFCONSTANT +BYTE-BUFFER-GET+ (JAVA:JMETHOD "java.nio.ByteBuffer" "get" "[B" "int" 
+"int"))
+(DEFCONSTANT +DIGEST-UPDATE+ (JAVA:JMETHOD "java.security.MessageDigest" "update" 
+"[B" "int" "int"))
+(MOP::ENSURE-METHOD 'DIGEST :LAMBDA-LIST '(URL &KEY (DIGEST 'SHA-256)) :QUALIFIERS 
+'NIL :SPECIALIZERS (MOP::CANONICALIZE-SPECIALIZERS (LIST 'PATHNAME)) :FUNCTION (GET-FASL-FUNCTION 
+*FASL-LOADER* 5))
+(FSET 'DIGEST-NIO (GET-FASL-FUNCTION *FASL-LOADER* 7) 4114 '(SOURCE &KEY (DIGEST 
+'SHA-256)) "Calculate digest with default of :SHA-256 pathname specified by URL.
+Returns an array of JVM primitive signed 8-bit bytes.
+
+Uses \"New I/O\" in JVM \"worse named API of all time\".
+
+*DIGEST-TYPES* controls the allowable digest types.")
+(MOP::ENSURE-METHOD 'DIGEST :LAMBDA-LIST '(SOURCE &KEY (DIGEST 'SHA-256)) :QUALIFIERS 
+'NIL :SPECIALIZERS (MOP::CANONICALIZE-SPECIALIZERS (LIST 'STRING)) :FUNCTION (GET-FASL-FUNCTION 
+*FASL-LOADER* 8))
+(EXPORT 'SHA256 :SYSTEM)

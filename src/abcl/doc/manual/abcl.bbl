@@ -1,0 +1,57 @@
+\newcommand{\etalchar}[1]{$^{#1}$}
+\begin{thebibliography}{BLFM05}
+
+\bibitem[Bea]{quicklisp}
+Zach Beane.
+\newblock Quicklisp.
+\newblock \url{http://www.quicklisp.org/}.
+\newblock Last accessed Jan 25, 2012.
+
+\bibitem[BLFM05]{rfc3986}
+Tim Berners-Lee, Roy Fielding, and Larry Masinter.
+\newblock Rfc 3986: Uri generic syntax.
+\newblock \url{http://www.ietf.org/rfc/rfc3986.txt}, 2005.
+\newblock Last accessed Feb 5, 2012.
+
+\bibitem[Gro06]{jsr-223}
+Mike Grogan.
+\newblock Scripting for the {Java} platform.
+\newblock Final Draft Specification JSR-223, Sun Microsystems, Inc., 2006.
+\newblock
+  \url{http://jcp.org/aboutJava/communityprocess/final/jsr223/index.html}.
+
+\bibitem[Mas00]{maso2000}
+Brian Maso.
+\newblock A new era for {Java} protocol handlers.
+\newblock \url{http://java.sun.com/developer/onlineTraining/protocolhandlers/},
+  August 2000.
+\newblock Last accessed Jan 25, 2012.
+
+\bibitem[P{\etalchar{+}}96]{CLHS}
+Kent Pitman et~al.
+\newblock {Common Lisp HyperSpec}.
+\newblock
+  \url{http://www.lispworks.com/documentation/HyperSpec/Front/index.htm}, 1996.
+\newblock Last accessed Feb 4, 2012.
+
+\bibitem[RBRK]{asdf}
+Fran\c{c}ois-Ren\'{e} Rideau, Daniel Barlow, Christopher Rhodes, and Garry
+  King.
+\newblock Asdf.
+\newblock \url{http://common-lisp.net/project/asdf/}.
+\newblock Last accessed Feb 5, 2012.
+
+\bibitem[Rho09]{RHODES2007}
+Christophe Rhodes.
+\newblock User-extensible sequences in {Common Lisp}.
+\newblock In {\em Proceedings of the 2007 International Lisp Conference}, pages
+  13:1--13:14. ACM, 2009.
+\newblock Also available at
+  \url{http://doc.gold.ac.uk/~mas01cr/papers/ilc2007/sequences-20070301.pdf}.
+
+\bibitem[sli]{slime}
+{SLIME: The Superior Lisp Interaction Mode for Emacs}.
+\newblock \url{http://common-lisp.net/project/slime/}.
+\newblock Last accessed Feb 4, 2012.
+
+\end{thebibliography}

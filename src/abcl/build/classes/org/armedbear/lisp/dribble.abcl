@@ -1,0 +1,12 @@
+"; -*- Mode: Lisp -*-"
+(SYSTEM:INIT-FASL :VERSION 42)
+(SETQ SYSTEM:*SOURCE* #P"/Users/cpc26/src/abcl/src/org/armedbear/lisp/dribble.lisp")
+
+(SETQ SYSTEM:*FASL-LOADER* (SYSTEM::MAKE-FASL-CLASS-LOADER "org.armedbear.lisp.dribble"))
+(SYSTEM:%IN-PACKAGE "SYSTEM")
+(DEFVAR *PREVIOUS-DRIBBLE-STREAMS* NIL)
+(DEFVAR *DRIBBLE-STREAM* NIL)
+(FSET 'DRIBBLE (GET-FASL-FUNCTION *FASL-LOADER* 0) 2426 '(&OPTIONAL PATHNAME &KEY 
+(IF-EXISTS :APPEND)) "With a file name as an argument, dribble opens the file and sends a
+  record of further I/O to that file. Without an argument, it closes
+  the dribble file, and quits logging.")

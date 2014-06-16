@@ -1,0 +1,27 @@
+"; -*- Mode: Lisp -*-"
+(SYSTEM:INIT-FASL :VERSION 42)
+(SETQ SYSTEM:*SOURCE* #P"/Users/cpc26/src/abcl/src/org/armedbear/lisp/numbers.lisp")
+
+(SETQ SYSTEM:*FASL-LOADER* (SYSTEM::MAKE-FASL-CLASS-LOADER "org.armedbear.lisp.numbers"))
+(SYSTEM:%IN-PACKAGE "SYSTEM")
+(FSET 'SIGNUM (GET-FASL-FUNCTION *FASL-LOADER* 0) 1671 '(NUMBER) "If NUMBER is zero, return NUMBER, else return (/ NUMBER (ABS NUMBER)).")
+(FSET 'ROUND (GET-FASL-FUNCTION *FASL-LOADER* 1) 1891 '(NUMBER &OPTIONAL (DIVISOR 
+1)) "Rounds number (or number/divisor) to nearest integer.
+   The second returned value is the remainder.")
+(FSET 'FFLOOR (GET-FASL-FUNCTION *FASL-LOADER* 2) 2767 '(NUMBER &OPTIONAL (DIVISOR 
+1)) "Same as FLOOR, but returns first value as a float.")
+(FSET 'FCEILING (GET-FASL-FUNCTION *FASL-LOADER* 3) 3081 '(NUMBER &OPTIONAL (DIVISOR 
+1)) "Same as CEILING, but returns first value as a float.")
+(FSET 'FROUND (GET-FASL-FUNCTION *FASL-LOADER* 4) 3400 '(NUMBER &OPTIONAL (DIVISOR 
+1)) "Same as ROUND, but returns first value as a float.")
+(FSET 'RATIONALIZE (GET-FASL-FUNCTION *FASL-LOADER* 5) 3618 '(NUMBER) NIL)
+(FSET 'GCD (GET-FASL-FUNCTION *FASL-LOADER* 6) 3678 '(&REST INTEGERS) NIL)
+(FSET 'ISQRT (GET-FASL-FUNCTION *FASL-LOADER* 7) 4049 '(NATURAL) "Returns the root of the nearest integer less than natural which is a perfect
+   square.")
+(FSET 'FLOAT-PRECISION (GET-FASL-FUNCTION *FASL-LOADER* 8) 5012 '(FLOAT) NIL)
+(FSET 'DECODE-FLOAT (GET-FASL-FUNCTION *FASL-LOADER* 9) 5842 '(FLOAT) NIL)
+(FSET 'CONJUGATE (GET-FASL-FUNCTION *FASL-LOADER* 10) 6084 '(NUMBER) NIL)
+(FSET 'PHASE (GET-FASL-FUNCTION *FASL-LOADER* 11) 6227 '(NUMBER) "Returns the angle part of the polar representation of a complex number.
+   For complex numbers, this is (atan (imagpart number) (realpart number)).
+   For non-complex positive numbers, this is 0.  For non-complex negative
+   numbers this is PI.")

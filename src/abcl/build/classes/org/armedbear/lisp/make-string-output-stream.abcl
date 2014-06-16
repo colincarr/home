@@ -1,0 +1,8 @@
+"; -*- Mode: Lisp -*-"
+(SYSTEM:INIT-FASL :VERSION 42)
+(SETQ SYSTEM:*SOURCE* #P"/Users/cpc26/src/abcl/src/org/armedbear/lisp/make-string-output-stream.lisp")
+
+(SETQ SYSTEM:*FASL-LOADER* (SYSTEM::MAKE-FASL-CLASS-LOADER "org.armedbear.lisp.make_string_output_stream"))
+(SYSTEM:%IN-PACKAGE "SYSTEM")
+(FSET 'MAKE-STRING-OUTPUT-STREAM (GET-FASL-FUNCTION *FASL-LOADER* 0) 1672 '(&KEY 
+(ELEMENT-TYPE 'CHARACTER)) NIL)

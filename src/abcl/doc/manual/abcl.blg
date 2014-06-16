@@ -1,0 +1,55 @@
+This is BibTeX, Version 0.99d (TeX Live 2011/Fink)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: abcl.aux
+A level-1 auxiliary file: java.aux
+A level-1 auxiliary file: threads.aux
+A level-1 auxiliary file: extensions.aux
+A level-1 auxiliary file: mop.aux
+A level-1 auxiliary file: system.aux
+A level-1 auxiliary file: jss.aux
+The style file: alpha.bst
+Database file #1: abcl.bib
+Warning--I didn't find a database entry for "nio"
+Warning--I didn't find a database entry for "evenson2011"
+You've used 8 entries,
+            2543 wiz_defined-function locations,
+            612 strings with 5687 characters,
+and the built_in function-call counts, 2730 in all, are:
+= -- 280
+> -- 108
+< -- 6
++ -- 36
+- -- 35
+* -- 143
+:= -- 441
+add.period$ -- 32
+call.type$ -- 8
+change.case$ -- 45
+chr.to.int$ -- 8
+cite$ -- 8
+duplicate$ -- 104
+empty$ -- 219
+format.name$ -- 45
+if$ -- 580
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 1
+newline$ -- 51
+num.names$ -- 21
+pop$ -- 74
+preamble$ -- 1
+purify$ -- 53
+quote$ -- 0
+skip$ -- 90
+stack$ -- 0
+substring$ -- 100
+swap$ -- 20
+text.length$ -- 6
+text.prefix$ -- 5
+top$ -- 0
+type$ -- 64
+warning$ -- 0
+while$ -- 20
+width$ -- 12
+write$ -- 113
+(There were 2 warnings)

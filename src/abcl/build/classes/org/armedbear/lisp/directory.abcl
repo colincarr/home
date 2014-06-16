@@ -1,0 +1,24 @@
+"; -*- Mode: Lisp -*-"
+(SYSTEM:INIT-FASL :VERSION 42)
+(SETQ SYSTEM:*SOURCE* #P"/Users/cpc26/src/abcl/src/org/armedbear/lisp/directory.lisp")
+
+(SETQ SYSTEM:*FASL-LOADER* (SYSTEM::MAKE-FASL-CLASS-LOADER "org.armedbear.lisp.directory"))
+(SYSTEM:%IN-PACKAGE "SYSTEM")
+(FSET 'PATHNAME-AS-FILE (GET-FASL-FUNCTION *FASL-LOADER* 0) 1686 '(PATHNAME) NIL)
+(FSET 'WILD-INFERIORS-P (GET-FASL-FUNCTION *FASL-LOADER* 1) 2018 '(COMPONENT) NIL)
+(FSET 'LIST-DIRECTORIES-WITH-WILDCARDS (GET-FASL-FUNCTION *FASL-LOADER* 2) 2089 '(PATHNAME 
+WILD-INFERIORS-FOUND RESOLVE-SYMLINKS) NIL)
+(FSET 'DIRECTORY (GET-FASL-FUNCTION *FASL-LOADER* 5) 5019 '(PATHSPEC &KEY (RESOLVE-SYMLINKS 
+NIL)) "Determines which, if any, files that are present in the file system have names matching PATHSPEC, and returns a fresh list of pathnames corresponding to the potential truenames of those files.  
+
+With :RESOLVE-SYMLINKS set to nil, not all pathnames returned may
+correspond to an existing file.  Symbolic links are considered to be
+be valid entries even if they do not currently have a valid file or
+directory as a target.  Therefore, subsequent CL:TRUENAME call on
+individual pathnames in the list may signal an error, i.e. the
+pathnames have been constructed as truenames, without calling the
+entire resolution routine of CL:TRUENAME.
+
+If called with :RESOLVE-SYMLINKS set to T, and any of the pathnames
+have truenames which do not exist, this routine will signal a file
+error to its caller.")

@@ -1,0 +1,7 @@
+"; -*- Mode: Lisp -*-"
+(SYSTEM:INIT-FASL :VERSION 42)
+(SETQ SYSTEM:*SOURCE* #P"/Users/cpc26/src/abcl/src/org/armedbear/lisp/upgraded-complex-part-type.lisp")
+
+(SETQ SYSTEM:*FASL-LOADER* (SYSTEM::MAKE-FASL-CLASS-LOADER "org.armedbear.lisp.upgraded_complex_part_type"))
+(SYSTEM:FSET 'UPGRADED-COMPLEX-PART-TYPE (SYSTEM::GET-FASL-FUNCTION SYSTEM:*FASL-LOADER* 
+0) 0 '(TYPESPEC &OPTIONAL ENVIRONMENT) NIL)

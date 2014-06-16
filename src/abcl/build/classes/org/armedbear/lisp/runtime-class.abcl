@@ -1,0 +1,56 @@
+"; -*- Mode: Lisp -*-"
+(SYSTEM:INIT-FASL :VERSION 42)
+(SETQ SYSTEM:*SOURCE* #P"/Users/cpc26/src/abcl/src/org/armedbear/lisp/runtime-class.lisp")
+(SETQ SYSTEM::*FASL-UNINTERNED-SYMBOLS* #(#:WHOLE-1965944 #:ENVIRONMENT-1965945))
+(SETQ SYSTEM:*FASL-LOADER* (SYSTEM::MAKE-FASL-CLASS-LOADER "org.armedbear.lisp.runtime_class"))
+(REQUIRE "JVM")
+(SYSTEM:%IN-PACKAGE "JVM")
+(DEFCONSTANT +ABCL-JAVA-OBJECT+ (MAKE-JVM-CLASS-NAME "org.armedbear.lisp.JavaObject"))
+(FSET 'JAVA:JNEW-RUNTIME-CLASS (SYSTEM::GET-FASL-FUNCTION *FASL-LOADER* 0) 302 '(CLASS-NAME 
+&REST ARGS &KEY (SUPERCLASS "java.lang.Object") INTERFACES CONSTRUCTORS METHODS FIELDS 
+(ACCESS-FLAGS '(:PUBLIC)) ANNOTATIONS) "Creates and loads a Java class with methods calling Lisp closures
+   as given in METHODS.  CLASS-NAME and SUPER-NAME are strings,
+   INTERFACES is a list of strings, CONSTRUCTORS, METHODS and FIELDS are
+   lists of constructor, method and field definitions.
+
+   Constructor definitions - currently NOT supported - are lists of the form
+   (argument-types function &optional super-invocation-arguments)
+   where argument-types is a list of strings and function is a lisp function of
+   (1+ (length argument-types)) arguments; the instance (`this') is passed in as
+   the last argument. The optional super-invocation-arguments is a list of numbers
+   between 1 and (length argument-types), where the number k stands for the kth argument
+   to the just defined constructor. If present, the constructor of the superclass
+   will be called with the appropriate arguments. E.g., if the constructor definition is
+   ((\"java.lang.String\" \"int\") #'(lambda (string i this) ...) (2 1))
+   then the constructor of the superclass with argument types (int, java.lang.String) will
+   be called with the second and first arguments.
+
+   Method definitions are lists of the form
+   (method-name return-type argument-types function &key modifiers annotations)
+   where method-name is a string, return-type and argument-types are strings or keywords for
+   primitive types (:void, :int, etc.), and function is a Lisp function of minimum arity
+   (1+ (length argument-types)); the instance (`this') is passed in as the first argument.
+
+   Field definitions are lists of the form (field-name type &key modifiers annotations).")
+(FSET 'JAVA::%JNEW-RUNTIME-CLASS (SYSTEM::GET-FASL-FUNCTION *FASL-LOADER* 1) 2898 
+'(CLASS-NAME STREAM &KEY (SUPERCLASS "java.lang.Object") INTERFACES CONSTRUCTORS 
+METHODS FIELDS (ACCESS-FLAGS '(:PUBLIC)) ANNOTATIONS) "Actual implementation of jnew-runtime-class. Writes the class bytes to a stream. Returns two values: the finalized class-file structure and the alist of method implementation fields.")
+(FSET 'JAVA::MAKE-ACCESSOR-NAME (SYSTEM::GET-FASL-FUNCTION *FASL-LOADER* 2) 4660 
+'(PREFIX NAME) NIL)
+(FSET 'EMIT-INVOKESPECIAL (SYSTEM::GET-FASL-FUNCTION *FASL-LOADER* 4) 4833 '(CLASS-NAME 
+METHOD-NAME ARG-TYPES RETURN-TYPE) NIL)
+(FSET 'JAVA::CANONICALIZE-JAVA-TYPE (SYSTEM::GET-FASL-FUNCTION *FASL-LOADER* 5) 5474 
+'(TYPE) NIL)
+(FSET 'JAVA::EMIT-UNBOX-AND-RETURN (SYSTEM::GET-FASL-FUNCTION *FASL-LOADER* 6) 5653 
+'(RETURN-TYPE) NIL)
+(FSET 'JAVA::RUNTIME-CLASS-ADD-METHODS (SYSTEM::GET-FASL-FUNCTION *FASL-LOADER* 7) 
+6240 '(CLASS-FILE METHODS) NIL)
+(FSET 'JAVA::RUNTIME-CLASS-ADD-FIELDS (SYSTEM::GET-FASL-FUNCTION *FASL-LOADER* 9) 
+10652 '(CLASS-FILE FIELDS) NIL)
+(FSET 'JAVA:DEFINE-JAVA-CLASS (MAKE-MACRO 'JAVA:DEFINE-JAVA-CLASS (SYSTEM::GET-FASL-FUNCTION 
+*FASL-LOADER* 10)) 12784 'NIL)
+(FSET 'PARSE-ANNOTATION (SYSTEM::GET-FASL-FUNCTION *FASL-LOADER* 11) 12828 '(ANNOTATION) 
+NIL)
+(FSET 'PARSE-ANNOTATION-ELEMENT (SYSTEM::GET-FASL-FUNCTION *FASL-LOADER* 12) 13242 
+'(ELEM) NIL)
+(PROVIDE "RUNTIME-CLASS")

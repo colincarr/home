@@ -1,0 +1,58 @@
+\BOOKMARK [2][-]{subsection.0.0.1}{Preface to the Fourth Edition}{}% 1
+\BOOKMARK [2][-]{subsection.0.0.2}{Preface to the Third Edition}{}% 2
+\BOOKMARK [2][-]{subsection.0.0.3}{Preface to the Second Edition}{}% 3
+\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 4
+\BOOKMARK [1][-]{section.1.1}{Conformance}{chapter.1}% 5
+\BOOKMARK [2][-]{subsection.1.1.1}{ANSI Common Lisp}{section.1.1}% 6
+\BOOKMARK [2][-]{subsection.1.1.2}{Contemporary Common Lisp}{section.1.1}% 7
+\BOOKMARK [1][-]{section.1.2}{License}{chapter.1}% 8
+\BOOKMARK [1][-]{section.1.3}{Contributors}{chapter.1}% 9
+\BOOKMARK [0][-]{chapter.2}{Running ABCL}{}% 10
+\BOOKMARK [1][-]{section.2.1}{Options}{chapter.2}% 11
+\BOOKMARK [1][-]{section.2.2}{Initialization}{chapter.2}% 12
+\BOOKMARK [0][-]{chapter.3}{Interaction with the Hosting JVM}{}% 13
+\BOOKMARK [1][-]{section.3.1}{Lisp to Java}{chapter.3}% 14
+\BOOKMARK [2][-]{subsection.3.1.1}{Low-level Java API}{section.3.1}% 15
+\BOOKMARK [1][-]{section.3.2}{Java to Lisp}{chapter.3}% 16
+\BOOKMARK [2][-]{subsection.3.2.1}{Calling Lisp from Java}{section.3.2}% 17
+\BOOKMARK [1][-]{section.3.3}{Java Scripting API \(JSR-223\)}{chapter.3}% 18
+\BOOKMARK [2][-]{subsection.3.3.1}{Conversions}{section.3.3}% 19
+\BOOKMARK [2][-]{subsection.3.3.2}{Implemented JSR-223 interfaces}{section.3.3}% 20
+\BOOKMARK [2][-]{subsection.3.3.3}{Start-up and configuration file}{section.3.3}% 21
+\BOOKMARK [2][-]{subsection.3.3.4}{Evaluation}{section.3.3}% 22
+\BOOKMARK [2][-]{subsection.3.3.5}{Compilation}{section.3.3}% 23
+\BOOKMARK [2][-]{subsection.3.3.6}{Invocation of functions and methods}{section.3.3}% 24
+\BOOKMARK [2][-]{subsection.3.3.7}{Implementation of Java interfaces in Lisp}{section.3.3}% 25
+\BOOKMARK [2][-]{subsection.3.3.8}{Implementation of Java classes in Lisp}{section.3.3}% 26
+\BOOKMARK [0][-]{chapter.4}{Implementation Dependent Extensions}{}% 27
+\BOOKMARK [1][-]{section.4.1}{JAVA}{chapter.4}% 28
+\BOOKMARK [2][-]{subsection.4.1.1}{Modifying the JVM CLASSPATH}{section.4.1}% 29
+\BOOKMARK [2][-]{subsection.4.1.2}{Creating a synthetic Java Class at Runtime}{section.4.1}% 30
+\BOOKMARK [1][-]{section.4.2}{THREADS}{chapter.4}% 31
+\BOOKMARK [1][-]{section.4.3}{EXTENSIONS}{chapter.4}% 32
+\BOOKMARK [0][-]{chapter.5}{Beyond ANSI}{}% 33
+\BOOKMARK [1][-]{section.5.1}{Compiler to Java 5 Bytecode}{chapter.5}% 34
+\BOOKMARK [1][-]{section.5.2}{Pathname}{chapter.5}% 35
+\BOOKMARK [1][-]{section.5.3}{Package-Local Nicknames}{chapter.5}% 36
+\BOOKMARK [1][-]{section.5.4}{Extensible Sequences}{chapter.5}% 37
+\BOOKMARK [1][-]{section.5.5}{Extensions to CLOS}{chapter.5}% 38
+\BOOKMARK [2][-]{subsection.5.5.1}{Metaobject Protocol}{section.5.5}% 39
+\BOOKMARK [2][-]{subsection.5.5.2}{Specializing on Java classes}{section.5.5}% 40
+\BOOKMARK [1][-]{section.5.6}{Extensions to the Reader}{chapter.5}% 41
+\BOOKMARK [1][-]{section.5.7}{Overloading of the CL:REQUIRE Mechanism}{chapter.5}% 42
+\BOOKMARK [1][-]{section.5.8}{JSS extension of the Reader by SHARPSIGN-DOUBLE-QUOTE}{chapter.5}% 43
+\BOOKMARK [1][-]{section.5.9}{ASDF}{chapter.5}% 44
+\BOOKMARK [0][-]{chapter.6}{Contrib}{}% 45
+\BOOKMARK [1][-]{section.6.1}{abcl-asdf}{chapter.6}% 46
+\BOOKMARK [2][-]{subsection.6.1.1}{Referencing Maven Artifacts via ASDF}{section.6.1}% 47
+\BOOKMARK [2][-]{subsection.6.1.2}{API}{section.6.1}% 48
+\BOOKMARK [2][-]{subsection.6.1.3}{Directly Instructing Maven to Download JVM Artifacts}{section.6.1}% 49
+\BOOKMARK [1][-]{section.6.2}{asdf-jar}{chapter.6}% 50
+\BOOKMARK [1][-]{section.6.3}{jss}{chapter.6}% 51
+\BOOKMARK [2][-]{subsection.6.3.1}{JSS usage}{section.6.3}% 52
+\BOOKMARK [1][-]{section.6.4}{jfli}{chapter.6}% 53
+\BOOKMARK [1][-]{section.6.5}{asdf-install}{chapter.6}% 54
+\BOOKMARK [0][-]{chapter.7}{History}{}% 55
+\BOOKMARK [0][-]{appendix.A}{The MOP Dictionary}{}% 56
+\BOOKMARK [0][-]{appendix.B}{The SYSTEM Dictionary}{}% 57
+\BOOKMARK [0][-]{appendix.C}{The JSS Dictionary}{}% 58

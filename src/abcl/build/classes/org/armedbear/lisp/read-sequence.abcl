@@ -1,0 +1,8 @@
+"; -*- Mode: Lisp -*-"
+(SYSTEM:INIT-FASL :VERSION 42)
+(SETQ SYSTEM:*SOURCE* #P"/Users/cpc26/src/abcl/src/org/armedbear/lisp/read-sequence.lisp")
+
+(SETQ SYSTEM:*FASL-LOADER* (SYSTEM::MAKE-FASL-CLASS-LOADER "org.armedbear.lisp.read_sequence"))
+(SYSTEM:%IN-PACKAGE "SYSTEM")
+(FSET 'READ-SEQUENCE (GET-FASL-FUNCTION *FASL-LOADER* 0) 1651 '(SEQUENCE STREAM &KEY 
+(START 0) END) NIL)

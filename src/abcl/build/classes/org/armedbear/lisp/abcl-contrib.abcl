@@ -1,0 +1,31 @@
+"; -*- Mode: Lisp -*-"
+(SYSTEM:INIT-FASL :VERSION 42)
+(SETQ SYSTEM:*SOURCE* #P"/Users/cpc26/src/abcl/src/org/armedbear/lisp/abcl-contrib.lisp")
+(SETQ SYSTEM::*FASL-UNINTERNED-SYMBOLS* #(#:G1921134 #:G1921138 #:G1921143 #:G1921539 #:G1921543))
+(SETQ SYSTEM:*FASL-LOADER* (SYSTEM::MAKE-FASL-CLASS-LOADER "org.armedbear.lisp.abcl_contrib"))
+(SYSTEM:%IN-PACKAGE "SYSTEM")
+(REQUIRE :ASDF)
+(DEFCONSTANT +GET-CLASSLOADER+ (JAVA:JMETHOD "java.lang.Class" "getClassLoader"))
+(FSET 'BOOT-CLASSLOADER (GET-FASL-FUNCTION *FASL-LOADER* 0) 123 'NIL NIL)
+(FSET 'SYSTEM-JAR-P (GET-FASL-FUNCTION *FASL-LOADER* 1) 261 '(P) NIL)
+(FSET 'CONTRIB-JAR-P (GET-FASL-FUNCTION *FASL-LOADER* 2) 312 '(P) NIL)
+(FSET 'NAMED-JAR-P (GET-FASL-FUNCTION *FASL-LOADER* 3) 372 '(NAME P) NIL)
+(FSET 'FIND-SYSTEM (GET-FASL-FUNCTION *FASL-LOADER* 4) 907 'NIL "Find the location of the system.
+
+Used to determine relative pathname to find 'abcl-contrib.jar'.")
+(FSET 'FIND-JAR (GET-FASL-FUNCTION *FASL-LOADER* 9) 1378 '(PREDICATE) NIL)
+(FSET 'FIND-SYSTEM-JAR (GET-FASL-FUNCTION *FASL-LOADER* 10) 1530 'NIL "Return the pathname of the system jar, one of `abcl.jar` or
+`abcl-m.n.p.jar` or `abcl-m.n.p[.~-]something.jar`.")
+(FSET 'FIND-CONTRIB-JAR (GET-FASL-FUNCTION *FASL-LOADER* 11) 1702 'NIL "Return the pathname of the contrib jar, one of `abcl-contrib.jar` or
+`abcl-contrib-m.n.p.jar` or `abcl-contrib-m.n.p[.~-]something.jar`.")
+(DEFVAR *ABCL-CONTRIB* NIL "Pathname of the ABCL contrib.
+Initialized via SYSTEM:FIND-CONTRIB.")
+(DEFPARAMETER *VERBOSE* T)
+(FSET 'ADD-CONTRIB (GET-FASL-FUNCTION *FASL-LOADER* 12) 2029 '(ABCL-CONTRIB-JAR) 
+"Introspects ABCL-CONTRIB-JAR for asdf systems to add to ASDF:*CENTRAL-REGISTRY*")
+(FSET 'FIND-AND-ADD-CONTRIB (GET-FASL-FUNCTION *FASL-LOADER* 14) 2736 '(&KEY (VERBOSE 
+NIL)) "Attempt to find the ABCL contrib jar and add its contents to ASDF.
+Returns the pathname of the contrib if it can be found.")
+(FSET 'FIND-CONTRIB (GET-FASL-FUNCTION *FASL-LOADER* 17) 3237 'NIL "Introspect runtime classpaths to find a loadable ABCL-CONTRIB.")
+(EXPORT '(FIND-SYSTEM FIND-CONTRIB *ABCL-CONTRIB*))
+(FUNCALL (GET-FASL-FUNCTION *FASL-LOADER* 21))

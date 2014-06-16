@@ -1,0 +1,8 @@
+"; -*- Mode: Lisp -*-"
+(SYSTEM:INIT-FASL :VERSION 42)
+(SETQ SYSTEM:*SOURCE* #P"/Users/cpc26/src/abcl/src/org/armedbear/lisp/read-from-string.lisp")
+
+(SETQ SYSTEM:*FASL-LOADER* (SYSTEM::MAKE-FASL-CLASS-LOADER "org.armedbear.lisp.read_from_string"))
+(SYSTEM:%IN-PACKAGE "SYSTEM")
+(FSET 'READ-FROM-STRING (GET-FASL-FUNCTION *FASL-LOADER* 0) 1659 '(STRING &OPTIONAL 
+(EOF-ERROR-P T) EOF-VALUE &KEY (START 0) END PRESERVE-WHITESPACE) NIL)

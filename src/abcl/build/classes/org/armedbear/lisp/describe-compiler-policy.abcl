@@ -1,0 +1,8 @@
+"; -*- Mode: Lisp -*-"
+(SYSTEM:INIT-FASL :VERSION 42)
+(SETQ SYSTEM:*SOURCE* #P"/Users/cpc26/src/abcl/src/org/armedbear/lisp/describe-compiler-policy.lisp")
+
+(SETQ SYSTEM:*FASL-LOADER* (SYSTEM::MAKE-FASL-CLASS-LOADER "org.armedbear.lisp.describe_compiler_policy"))
+(SYSTEM:%IN-PACKAGE "SYSTEM")
+(EXPORT 'DESCRIBE-COMPILER-POLICY)
+(FSET 'DESCRIBE-COMPILER-POLICY (GET-FASL-FUNCTION *FASL-LOADER* 0) 1651 'NIL NIL)

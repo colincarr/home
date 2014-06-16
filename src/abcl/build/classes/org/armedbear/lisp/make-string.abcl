@@ -1,0 +1,8 @@
+"; -*- Mode: Lisp -*-"
+(SYSTEM:INIT-FASL :VERSION 42)
+(SETQ SYSTEM:*SOURCE* #P"/Users/cpc26/src/abcl/src/org/armedbear/lisp/make-string.lisp")
+
+(SETQ SYSTEM:*FASL-LOADER* (SYSTEM::MAKE-FASL-CLASS-LOADER "org.armedbear.lisp.make_string"))
+(SYSTEM:%IN-PACKAGE "SYSTEM")
+(FSET 'MAKE-STRING (GET-FASL-FUNCTION *FASL-LOADER* 0) 1644 '(SIZE &KEY INITIAL-ELEMENT 
+ELEMENT-TYPE) NIL)
