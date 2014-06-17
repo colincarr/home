@@ -1,0 +1,9 @@
+#+TITLE:	README for $home
+#+AUTHOR:	Colin Carr
+#+EMAIL:	cpc26@member.fsf.org
+#+STARTUP:	content
+#+Last Update: <2014-06-16 Mon>
+
+* 1. What's this?
+
+$home for GNU and UNIX
