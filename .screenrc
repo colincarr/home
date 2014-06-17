@@ -1,0 +1,32 @@
+# Colin Carr
+startup_message off
+autodetach on
+shell -$SHELL
+# allows me to keep C-a for emacs and bash
+# this is the C-\ used for input methods
+escape ``
+# bell
+vbell on
+vbell_msg "    Woot ----- Woot!   "
+# status line and key bindings from Brad Sims 2004
+hardstatus alwayslastline "%{=b}%{G} Screen(s): %{b}%w %=%{kG}%C%A  %D, %M/%d/%Y "
+#hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %d/%m%{W}%c %{g}]'
+#hardstatus string '%{gk}[ %{G}%H %{g}][%= %{wk}%?%-Lw%?%{=b kR}(%{W}%n*%f %t%?(%u)%?%{=b kR})%{= kw}%?%+Lw%?%?%= %{g}][%{Y}%l%{g}]%{=b C}[ %m/%d %c ]%{W}'
+# =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= #
+
+##    Keybindings    ##
+
+# bind F7  to detach screen session from this terminal
+# bind F8  to kill current screen window.
+# bind F9  to create a new screen
+# bind F10 to rename current screen window
+# bind F11 to move to previous window
+# bind F12 to move to next window
+bindkey -k k7 detach
+bindkey -k k8 kill
+bindkey -k k9 screen
+bindkey -k k; title
+bindkey -k F1 prev
+bindkey -k F2 next
+
+# =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= #
