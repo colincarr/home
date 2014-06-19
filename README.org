@@ -1,9 +1,32 @@
-#+TITLE:	README for $home
-#+AUTHOR:	Colin Carr
-#+EMAIL:	cpc26@member.fsf.org
-#+STARTUP:	content
+#+TITLE:    README for $home
+#+AUTHOR:   Colin Carr
+#+EMAIL:    cpc26@member.fsf.org
+#+STARTUP:  content
 #+Last Update: <2014-06-16 Mon>
 
-* 1. What's this?
+* What's this?
 
 $home for GNU and UNIX
+
+** BASH
+
+** Emacs
+
+** SBCL
+
+*** Slime
+
+** Midnight Commander
+
+** TeX
+
+** Fonts
+
+** Python
+
+*** ipython
+
+** eclim/eclipse
+* GPG
+
+* SSH
