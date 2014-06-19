@@ -10,6 +10,11 @@ $home for GNU and UNIX
 
 ** BASH
 
+*** .bash_profile
+
+*** .bashrc
+
+*** .profile
 ** Emacs
 
 ** SBCL
