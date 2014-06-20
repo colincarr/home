@@ -1,0 +1,281 @@
+;; -*-lisp-*-
+(in-package :stumpwm)
+(run-shell-command "rm .xsession-errors")
+(run-shell-command " xrdb ~/.Xdefaults")
+;;  PREFIX SET TO C-i
+
+; Re-Read (load) .stumpwmrc C-t ; loadrc
+;  Setup Slime for StumpWM
+;; Load swank.
+;; *prefix-key* ; swank will kick this off
+;(load "/Users/cpc26/quicklisp/dists/quicklisp/software/slime-20120909-cvs/swank-loader.lisp")
+(swank-loader:init)
+(defcommand swank () ()
+  (setf stumpwm:*top-level-error-action* :break)
+  (swank:create-server :port 4005
+                       :style swank:*communication-style*
+                       :dont-close t)
+  (echo-string (current-screen) 
+	       "Starting swank. M-x slime-connect RET RET, then (in-package stumpwm)."))
+(swank)
+
+
+;I set the prefix key to the menu key. This key is easier to type than Ctrl-t:
+;; Change the Stumpwm prefix key: Use the menu key
+;(set-prefix-key (kbd "Menu"))
+
+;Colin - I set prefix key to C-i since it may interfere least
+(set-prefix-key (kbd "C-i"))
+
+;; Set the message and input box to the bottom right. This way it overlaps with mode-line.
+(setf *message-window-gravity* :bottom-right)
+;; in seconds, how long a message will appear for. This must be an integer.
+(setf *timeout-wait* 5)
+;;;; Give conky enough space
+;(resize-head 0 0 14 1440 886)
+
+;Load some packges from the git stumpwm contrib directory:
+;(load "~/src/stumpwm/contrib/net.lisp")
+;; MODE-LINE
+;(load "~/src/stumpwm/contrib/battery.lisp")
+;(load "~/src/stumpwm/contrib/cpu.lisp")
+;(load "~/src/stumpwm/contrib/mem.lisp")
+;(load "~/src/stumpwm/contrib/disk.lisp")
+;(load "~/src/stumpwm/contrib/wifi.lisp")
+;(load "~/src/stumpwm/contrib/notifications.lisp")
+;(load "~/src/stumpwm/contrib/net.lisp")
+;(load "~/src/stumpwm/contrib/mpd.lisp")
+;(load-module "maildir")
+;; SUFRAW
+(defvar *surfraw-bookmark-file* "~/.surfraw.bookmarks")
+;(load "~/src/stumpwm/contrib/surfraw.lisp")
+;; Set the message and input box to the bottom right. This way it overlaps with mode-line.
+(setf *message-window-gravity* :bottom-right)
+;; in seconds, how long a message will appear for. This must be an integer.
+(setf *timeout-wait* 5)
+
+;Define a bunch of commands to switch to an already started application or to start it if it is not yet running:
+(defcommand emacs () ()
+  "run emacs"
+  (run-or-raise "emacs" '(:title "emacs")))
+
+(defcommand firefox () ()
+  "run firefox"
+  (run-or-raise "firefox" '(:class "Firefox")))
+
+(defcommand chromium () ()
+  "run chromium"
+  (run-or-raise "chromium-browser" '(:instance "chromium-browser")))
+
+(defcommand aumix () ()
+  "run aumix"
+  (run-or-raise "xterm -u8 -name aumix -e aumix" '(:instance "aumix")))
+
+(defcommand xterm-1 () ()
+  "run an xterm instance"
+  (run-or-raise "xterm -u8 -name xterm1 -e 'cd /data/txt && zsh'" '(:instance "xterm1")))
+
+(defcommand xterm-2 () ()
+  "run an xterm instance"
+  (run-or-raise "xterm -u8 -name xterm2" '(:instance "xterm2")))
+
+;; take a screenshot of the screen (using PrtSc)
+;; TODO Install `imagemagick' (for getting the `import' command)
+;(define-key *root-map* (kbd "Print")
+;  "exec import -window root png:$HOME/Desktop/screenshot_$(date +%F_%H-%M-%S).png")
+
+;; take a screenshot of a window (using Alt-PrtSc)
+;; TODO Install `scrot'
+(defcommand part-screenshot () ()
+  "Take a screenshot of only the active window."
+  (run-shell-command "scrot -s"))
+;(define-key *top-map* (kbd "M-Print") "part-screenshot")
+
+;; Turn on the modeline
+(if (not (head-mode-line (current-head)))
+     (toggle-mode-line (current-screen) (current-head)))
+
+;;"Where should the mode line be displayed? :top or :bottom."
+(setf *mode-line-screen-position* :bottom)
+
+;;"Where should the mode line be displayed? :top or :bottom."
+(setf *mode-line-frame-position* :bottom)
+
+;;; Font
+;; set the font for the message bar and input bar
+;; (set-font "-*-FreeMono-medium-r-*-*-6*")
+(set-font "-adobe-helvetica-medium-r-normal--10*")
+;; (set-font "-artwiz-snap-normal-*-*-*-*-*-*-*-*-*-iso10646-*")
+;; (set-font "-*-aqui-medium-r-*-*-11-*-*-*-*-*-*-*")
+;; (set-font "-*-wenquanyi bitmap song-medium-r-normal-*-12-*-*-*-*-*-iso10646-*")
+;; (set-font "-xos4-*-medium-r-normal-*-13-*-*-*-*-*-iso10646-*")
+;; (set-font "-*-profont-medium-r-normal-*-14-*-*-*-*-*-iso8859-*")
+;; (set-font "-*-unifont-medium-r-normal-*-14-*-*-*-*-*-iso10646-*")
+;; (set-font "-*-comic sans ms-medium-r-normal-*-12-*-*-*-*-*-*-*")
+;; Set the 1337 lisp machine font
+;; (set-font "-lispm-fixed-medium-r-normal-*-12-*-*-*-*-*-*-*")
+
+;Set the timeout to 10 seconds for modeline refresh
+;(setf *mode-line-timeout* 10) ;; defaults 60 there is mode-line-timer too
+
+;; Show time, cpu usage and network traffic in the modeline
+(setf *screen-mode-line-format*
+      (list '(:eval (run-shell-command "date '+%R%a/%Y'|tr -d [:cntrl:]" t)) "# %n %W"))
+
+;; how to format the window list
+(setf *window-format* "^B%m%n^b %40t  ")
+
+;; set the border color for focused windows
+(set-focus-color "orange")  ; `white' by default
+(set-unfocus-color "palegreen3")
+
+;Select a random background image from a given folder
+
+;; Define the background window
+;(defvar *background-image-path* "~/background-images/")
+;(defun select-random-background-image ()
+;  "Select a random image"
+;  (let ((file-list (directory (concatenate 'string *background-image-path* "*.jpg")))
+;        (*random-state* (make-random-state t)))
+;    (namestring (nth (random (length file-list)) file-list))))
+
+;(run-shell-command (concatenate 'string "display -resize 1440x900 -backdrop -window root " (select-random-background-image)))
+
+
+;Define some toplevel keybindings. These bindings don't require the prefix key. I use them to switch between my open applications:
+
+(define-key *top-map* (kbd "M-3") "firefox")
+(define-key *top-map* (kbd "M-4") "emacs")
+(define-key *top-map* (kbd "M-5") "xterm-1")
+(define-key *top-map* (kbd "M-6") "xterm-2")
+(define-key *top-map* (kbd "M-0") "aumix")
+(define-key *top-map* (kbd "M-F9") "loadrc")
+(define-key *top-map* (kbd "Pause") "gother")
+(define-key *top-map* (kbd "C-Pause") "grouplist")
+
+;Some keybindings for the defined prefix key:
+(define-key *root-map* (kbd "DEL") "repack-window-numbers")
+(define-key *root-map* (kbd "I") "show-window-properties")
+(define-key stumpwm:*root-map* (kbd "c") "run-shell-command xterm -e bash")
+
+;Set the mouse policy to focus follows mouse;
+(setf *mouse-focus-policy* :sloppy) ;; :click, :ignore, :sloppy
+
+;; dmenu provides a simple popup menu for launching programs
+(define-key *root-map* (kbd "P")
+  "exec dmenu_run -i -b -nb black -nf darkgrey  -sf black -sb darkgrey -p \"run command:\"") ; simple $PATH to run commands
+
+
+;Create some new virtual desktops (called groups in stumpwm):
+(run-commands "gnewbg Dev" "gnewbg Web" "gnewbg Mail" "gnewbg Chat" "gnewbg Media" "gnewbg Diversions" "gnewbg Remote")
+
+
+;My window placement rules:
+
+;; Clear rules
+(clear-window-placement-rules)
+
+(define-frame-preference "Default"
+  ;; frame raise lock (lock AND raise == jumpto)
+  (0 t   t :title "emacs")
+  (0 t   t :class "XTerm"))
+
+(define-frame-preference "Web"
+  ;; frame raise lock (lock AND raise == jumpto)
+  (0 t   t :class "Firefox"))
+
+(define-frame-preference "Media"
+  ;; frame raise lock (lock AND raise == jumpto)
+  (0 t   t :instance "aumix")
+  (0 t   t :class "MPlayer")
+  (0 t   t :class "Avidemux"))
+
+;;; Display the keysequence in progress
+(defmacro replace-hook (hook fn)
+`(remove-hook ,hook ,fn)
+`(add-hook ,hook ,fn))
+
+(defun key-press-hook (key key-seq cmd)
+  (declare (ignore key))
+  (unless (eq *top-map* *resize-map*)
+    (let ((*message-window-gravity* :bottom-right))
+      (message "Key sequence: ~A" (print-key-seq (reverse key-seq))))
+    (when (stringp cmd)
+      ;; Give 'em time to read it.
+      (sleep 0.1))))
+(replace-hook *key-press-hook* 'key-press-hook)
+
+;; Modeline Group Scrolling
+(setf stumpwm:*mode-line-click-hook*
+      (list (lambda (&rest args)
+(cond ((eq (second args) 5)
+(run-commands "gnext"))
+((eq (second args) 4)
+(run-commands "gprev"))))))
+
+
+
+;; ----------------------------------------------------------------------------------------------------
+;;; Here there is a small starting applications menu.
+
+(defcommand mymenu () ()
+  (labels ((pick (options)
+             (let ((selection (stumpwm::select-from-menu (current-screen) options "")))
+               (cond
+                 ((null selection)
+                  (throw 'stumpwm::error "Abort."))
+                 ((stringp (second selection))
+                  (second selection))
+                 (t
+                  (pick (cdr selection)))))))
+    (let ((choice (pick *app-menu*)))
+      (run-shell-command choice))))
+
+(defparameter *app-menu* '(("SEARCH" 
+			    ("Tracker" "tracker-search-tool")
+			    ("Nautilus"  "nautilus --browser --no-desktop"))
+			   ("BookShelf"
+                            ;;submenu
+                            ("PracticalCommonLisp" "okular ~/CPC26/Documents/ebooks/LISP/practicalcommonLisp.pdf")
+                            ("LispBook" "okular ~/CPC26/Documents/ebooks/LISP/lispbook.pdf"))
+                           ("INTERNET"
+                            ;; sub menu
+                            ("Firefox" "firefox")
+                            ("Epiphany" "epiphany"))
+                           ("FUN"
+                            ;; sub menu
+                            ("option 2" "xlogo")
+                            ("Crack attack" "crack-attack")
+                            ("wesnoth" "wesnoth")
+                            ("supertux" "supertux")
+                            ("GnuChess" "xboard"))
+                           ("WORK"
+                            ;;submenu
+                            ("OpenOffice.org" "openoffice")
+			    ("Okular" "okular")
+			    ("Lisp" "startclim.sh"))
+                           ("GRAPHICS"
+                            ;;submenu
+			    ("Comix" "comix")
+                            ("GIMP" "gimp"))))
+
+(define-key *root-map* (kbd ".") "mymenu")
+;; ----------------------------------------------------------------------------------------------------
+; defektz-spezial
+ (setf *mode-line-click-hook*
+               (list #'(lambda (mode-line button x y)
+                         (declare (ignore mode-line x y))
+                         (cond ((eq button 3) (run-commands "next" "remove-split"))
+			       ((eq button 2) (run-commands "gnext"))
+                               ((eq button 1) (run-commands "prev" "remove-split"))))))
+;; ----------------------------------------------------------------------------------------------------
+(message "/////  R E A D Y  -  S T A R T   C L I M  L I S T E N E R ")
+(message "/////  R E A D Y  -  A T T A C H   R E P L  @  P O R T 4005")
+;; Local Variables:
+;; coding: utf-8
+;; mode: stumpwm
+;; mode: outline-minor
+;; ispell-local-dictionary: "en_US"
+;; End:
+
+;;; .stumpwmrc ends here

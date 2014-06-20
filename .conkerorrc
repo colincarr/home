@@ -1,0 +1,161 @@
+//-*- mode:js2; -*-
+
+//theme_load("blackened");
+
+// Andre Aberer's .conkerorrc
+// source: http://lifealgorithms.wordpress.com/
+// license: GPL 3.0
+//
+//////////////
+// REQUIRED //
+//////////////
+require("new-tabs.js"); // For the new tabs
+// require("wikipedia-didyoumean.js"); // automatically follow proposals
+                                    // if not found in wikipedia
+// require("noscript.js");                  // does not work yet
+
+require("session.js");
+session_auto_save_auto_load = true; //load old session
+
+// Emacs-style mode line;
+//require("mode-line.js");
+
+add_hook("mode_line_hook", mode_line_adder(buffer_count_widget), true);
+// DOM inspector 
+//require("extensions/dom-inspector.js");
+
+// mode line
+// load_paths.unshift("chrome://conkeror-contrib/content/");
+//require("contrib/modules/mode-line-buttons.js");
+//mode_line_add_buttons(standard_mode_line_buttons, true);
+
+// customising the proxy
+// session_pref("network.proxy.type", 2);
+// session_pref("network.proxy.autoconfig_url", "http://pac.lrz-muenchen.de");
+
+
+//define_key(default_global_keymap, "C-x C-m", "execute-extended-command");
+
+//give us a function for reloading the rc
+//interactive("rc-reload",
+//            "Reload the Conkerorrc.",
+//            function(I) { load_rc_file("~/.conkerorrc"); });
+
+
+
+//////////////
+// WEBJUMPS //
+//////////////
+define_webjump("ctan-desc", "http://www.ctan.org/cgi-bin/search.py?metadataSearch=%s&metadataSearchSubmit=Search");
+define_webjump("ctan-pack", "http://www.ctan.org/cgi-bin/search.py?tdsFilename=%s&tdsFilenameSearch=Search");
+define_webjump("ctan-file", "http://www.ctan.org/cgi-bin/filenameSearch.py?filename=%s&Search=Search");
+define_webjump("ctan-doc", "http://www.ctan.org/cgi-bin/searchFullText.py?fullTextSearch=%s&fullTextSearchSubmit=Search");
+define_webjump("ctan-doc", "http://www.ctan.org/cgi-bin/searchFullText.py?fullTextSearch=%s&fullTextSearchSubmit=Search");
+define_webjump("gs", "http://scholar.google.de/scholar?q=%s&hl=en&lr=&btnG=Suche&num=100");
+define_webjump("gm", "http://maps.google.de/maps?gl=US&num=100&q=%s&um=1&ie=UTF-8&sa=N&hl=de&tab=wl");
+define_webjump("mc", "http://www.metacritics.com/search/process?sort=relevance&termType=all&ts=%s&ty=1&x=9&y=8");
+define_webjump("en", "http://dict.leo.org/ende?lp=ende&lang=de&searchLoc=0&cmpType=relaxed&sectHdr=on&spellToler=on&search=%s&relink=on");
+define_webjump("trans", "http://translate.google.com/translate_t#auto|en|%s");
+define_webjump("yt", "http://www.youtube.com/results?search_query=%s&search=Search");
+define_webjump("pm", "http://www.gopubmed.com/");
+
+require("search-engine.js");
+// locate the .xml files from conkeror, copy them and adjust the links to use this
+// define_search_engine_webjump("google.xml", "gg");
+// define_search_engine_webjump("google-german.xml", "gd");
+// define_search_engine_webjump("wikipedia.xml", "wp");
+// define_search_engine_webjump("wikipedia-german.xml", "wd");
+
+//////////
+// ORG //
+////////
+function org_remember(url, title, text, window) {
+    var eurl = encodeURIComponent(url);
+    var etitle = encodeURIComponent(title);
+    var etext = encodeURIComponent(text);
+    var cmd_str = "emacsclient -c org-protocol://remember://" + eurl + "/" + etitle + "/" + etext;
+    window.minibuffer.message("Issuing " + cmd_str);
+    shell_command_blind(cmd_str);
+}
+
+interactive("org-remember", "Remember the current url with org-remember",
+        function (I) {
+          org_remember(I.buffer.display_uri_string,
+                       I.buffer.document.title,
+                       I.buffer.top_frame.getSelection(),
+                       I.window);
+        });
+
+//////////
+// MISC //
+//////////
+// open windows in background with middle click
+require("clicks-in-new-buffer.js"); // middle click opens link in new buffer
+clicks_in_new_buffer_button = 2;
+clicks_in_new_buffer_target = OPEN_NEW_BUFFER_BACKGROUND;
+
+
+// disables too fast closing of the program
+//define_key(default_global_keymap, "C-x C-c", "confirm-quit");
+//can_kill_last_buffer=false;
+
+//add_hook("before_quit_hook",
+//         function () {
+//             var w = get_recent_conkeror_window();
+//             var result = (w == null) ||
+//                 "y" == (yield w.minibuffer.read_single_character_option(
+//                     $prompt = "Quit Conkeror? (y/n)",
+//                     $options = ["y", "n"]));
+//             yield co_return(result);
+//         });
+
+// lets conkeror run in daemon mode
+// conkeror.daemon_mode (1);
+// windows from the command line are loaded into new buffers
+url_remoting_fn = load_url_in_new_buffer;
+
+
+// no new window for downloading
+dowload_buffer_automatic_open_target = OPEN_NEW_BUFFER_BACKGROUND; //
+download_buffer_automatic_open_target = OPEN_NEW_BUFFER_BACKGROUND ;
+// for downloads
+// default_directory = "/home/aberer/downloads/"; // makes problems
+
+
+
+// password management
+session_pref("signon.rememberSignons", true);
+session_pref("signon.expireMasterPassword", false);
+session_pref("signon.SignonFileName", "signons.txt");
+Components.classes["@mozilla.org/login-manager;1"].getService(Components.interfaces.nsILoginManager);
+
+
+// brush out unnecessary links for google searches
+// google_search_bind_number_shortcuts();
+
+
+// add hint text of xkcd to image
+xkcd_add_title = true;
+
+function darken_page (I) {
+    var newSS, styles='* { background: black ! important; color: grey !important }'
+        + ':link, :link * { color: #4986dd !important }'
+        + ':visited, :visited * { color: #d75047 !important }';
+
+    var document = I.window.buffers.current.document;
+
+    if (document.createStyleSheet) {
+        document.createStyleSheet("javascript:'" + styles + "'");
+    }
+    else {
+        newSS=document.createElement('link');
+        newSS.rel='stylesheet';
+        newSS.href='data:text/css,'+escape(styles);
+        document.getElementsByTagName("head")[0].appendChild(newSS);
+    }
+}
+
+interactive("darken-page", "Darken the page in an attempt to save your eyes.",
+            darken_page);
+
+define_key(content_buffer_normal_keymap, "C-d", "darken-page");

@@ -1,0 +1,392 @@
+! ----------------------------------------------------------------------------
+! file:     ~/.Xdefaults
+! author:   Colin Carr - http://kir4tb.com
+! modified: February 2010
+! ----------------------------------------------------------------------------
+
+! comix
+
+! xterm - including clim debug
+CLIM*Background: yellow
+xterm*utf8: 1
+!XTerm*fa: Anadale
+!xterm*font: -*-clean-medium-r-normal-*-12-*-*-*-*-*-*
+!xterm*font: -misc-fixed-medium-*-*-*-*-140-*-*-*-100-*-*
+!xterm*font: -misc-fixed-*-*-*-*-*-200-*-*-*-*-*
+XTerm*faceName:Anadale
+XTerm*faceSize:12
+XTerm*geometry: 132x40
+CLIM*geometry: 80x40
+XTerm*VT100.metaSendsEscape: True
+xterm*saveLines: 10000
+# xterm*scrollBar: true
+# xterm*rightScrollBar: true
+xterm*jumpScroll: true
+CLIM*cursorColor: green
+xterm*cursorColor: red
+# xterm*colorBD: darkblue
+xterm*colorBDMode: true
+xterm*highlightColor: darkgray
+xterm*activeIcon: false
+# xterm*awaitInput: true
+xterm*scrollTtyOutput: false
+xterm*scrollKey: true
+! Snow Leopard fix for resize
+XTerm*ptySttySize: true
+
+xterm*charClass: 33:48,35-38:48,39:43,42-47:48,58-59:48,61:48,63-64:48,126:48
+
+xterm*Background: white
+xterm*Foreground: black
+
+! Tango Color Scheme (Again)
+XTerm*color0: #2e3436
+XTerm*color1: #cc0000
+XTerm*color2: #4e9a06
+XTerm*color3: #c4a000
+XTerm*color4: #3465a4
+XTerm*color5: #75507b
+XTerm*color6: #0b939b
+XTerm*color7: #d3d7cf
+XTerm*color8: #555753
+XTerm*color9: #ef2929
+XTerm*color10: #8ae234
+XTerm*color11: #fce94f
+XTerm*color12: #729fcf
+XTerm*color13: #ad7fa8
+XTerm*color14: #00f5e9
+XTerm*color15: #eeeeec
+
+
+
+
+! Xcursor --------------------------------------------------------------------
+xman*manualFontNormal: -*-terminus-medium-r-normal-*-16-*-*-*-*-*-koi8-r
+xman*manualFontBold: -*-terminus-*-*-*-*-*-*-*-*-*-*-koi8-r
+xman*manualFontItalic:  -*-terminus-*-*-*-*-*-*-*-*-*-*-koi8-r
+xman*directoryFontNormal: -*-terminus-*-*-*-*-*-*-*-*-*-*-koi8-r
+Xcursor.theme: Jimmac
+
+Xcursor.size:  16
+
+
+! yeahconsole ----------------------------------------------------------------
+yeahconsole*toggleKey:Control+space
+yeahconsole*consoleHeight: 40
+yeahconsole*aniDelay: 10
+
+! Xft settings ---------------------------------------------------------------
+
+Xft.dpi:        96
+Xft.antialias:  true
+Xft.rgba:       rgb
+Xft.hinting:    true
+Xft.hintstyle:  hintslight
+
+! xclock ---------------------------------------------------------------------
+
+xclock*update:            1
+xclock*analog:            false
+xclock*Foreground:        white
+xclock*background:        black
+
+!xcalc-----------------------------------------------------------------------
+
+xcalc*geometry:                        200x275
+xcalc.ti.bevel.background:             #111111
+xcalc.ti.bevel.screen.background:      #000000
+xcalc.ti.bevel.screen.DEG.background:  #000000
+xcalc.ti.bevel.screen.DEG.foreground:  LightSeaGreen
+xcalc.ti.bevel.screen.GRAD.background: #000000
+xcalc.ti.bevel.screen.GRAD.foreground: LightSeaGreen
+xcalc.ti.bevel.screen.RAD.background:  #000000
+xcalc.ti.bevel.screen.RAD.foreground:  LightSeaGreen
+xcalc.ti.bevel.screen.INV.background:  #000000
+xcalc.ti.bevel.screen.INV.foreground:  Red
+xcalc.ti.bevel.screen.LCD.background:  #000000
+xcalc.ti.bevel.screen.LCD.foreground:  LightSeaGreen
+xcalc.ti.bevel.screen.LCD.shadowWidth: 0
+xcalc.ti.bevel.screen.M.background:    #000000
+xcalc.ti.bevel.screen.M.foreground:    LightSeaGreen
+xcalc.ti.bevel.screen.P.background:    #000000
+xcalc.ti.bevel.screen.P.foreground:    Yellow
+xcalc.ti.Command.foreground:  White
+xcalc.ti.Command.background:  #777777
+xcalc.ti.button5.background:  Orange3
+xcalc.ti.button19.background: #611161
+xcalc.ti.button18.background: #611161
+xcalc.ti.button20.background: #611111
+!uncomment to change label on division button
+!xcalc.ti.button20.label:      /
+xcalc.ti.button25.background: #722222
+xcalc.ti.button30.background: #833333
+xcalc.ti.button35.background: #944444
+xcalc.ti.button40.background: #a55555
+xcalc.ti.button22.background: #222262
+xcalc.ti.button23.background: #222262
+xcalc.ti.button24.background: #222272
+xcalc.ti.button27.background: #333373
+xcalc.ti.button28.background: #333373
+xcalc.ti.button29.background: #333373
+xcalc.ti.button32.background: #444484
+xcalc.ti.button33.background: #444484
+xcalc.ti.button34.background: #444484
+xcalc.ti.button37.background: #555595
+xcalc.ti.button38.background: #555595
+xcalc.ti.button39.background: #555595
+XCalc*Cursor:                 hand2
+XCalc*ShapeStyle:             rectangle
+
+!-------------------------------------------------------------------------------
+!
+!	X M E S S A G E - Setting
+!
+!
+.xmessage.form.okay.shapeStyle: rectangle
+.xmessage.form.okay.background: #777777
+.xmessage.form.okay.foreground: snow
+!xmessage*message*background: snow
+xmessage*defaultButton: okay
+Xmessage.form.message.Scroll:  WhenNeeded
+
+! xfontsel - just makes is look less ugly.
+XFontSel*menu*showUnselectable: false
+XFontSel*MenuButton.shadowWidth: 2
+XFontsel*Toggle*ToggleStyle: check
+XFontsel*MenuButton*Justify: left
+XFontsel*MenuButton*MenuButtonStyle: select
+.xfontsel.pane.commandBox.quitButton.background: #204A87
+.xfontsel.pane.commandBox.quitButton.foreground: #DEDEDE
+.xfontsel.pane.commandBox.ownButton.background: #628ABE
+.xfontsel.pane.commandBox.ownButton.foreground: #DEDEDE
+.xfontsel.pane.commandBox.countLabel.background: #DEDEDE
+.xfontsel.pane.viewPort.sampleText.background: #204A87
+.xfontsel.pane.viewPort.sampleText.foreground: #DEDEDE
+.xfontsel.pane.fieldBox.field0.background: #2B4F98
+.xfontsel.pane.fieldBox.field0.foreground: #DEDEDE
+.xfontsel.pane.fieldBox.field1.background: #2B4F98
+.xfontsel.pane.fieldBox.field1.foreground: #DEDEDE
+.xfontsel.pane.fieldBox.field2.background: #2B4F98
+.xfontsel.pane.fieldBox.field2.foreground: #DEDEDE
+.xfontsel.pane.fieldBox.field3.background: #2B4F98
+.xfontsel.pane.fieldBox.field3.foreground: #DEDEDE
+.xfontsel.pane.fieldBox.field4.background: #2B4F98
+.xfontsel.pane.fieldBox.field4.foreground: #DEDEDE
+.xfontsel.pane.fieldBox.field5.background: #2B4F98
+.xfontsel.pane.fieldBox.field5.foreground: #DEDEDE
+.xfontsel.pane.fieldBox.field6.background: #2B4F98
+.xfontsel.pane.fieldBox.field6.foreground: #DEDEDE
+.xfontsel.pane.fieldBox.field7.background: #2B4F98
+.xfontsel.pane.fieldBox.field7.foreground: #DEDEDE
+.xfontsel.pane.fieldBox.field8.background: #2B4F98
+.xfontsel.pane.fieldBox.field8.foreground: #DEDEDE
+.xfontsel.pane.fieldBox.field9.background: #2B4F98
+.xfontsel.pane.fieldBox.field9.foreground: #DEDEDE
+.xfontsel.pane.fieldBox.field10.background: #2B4F98
+.xfontsel.pane.fieldBox.field10.foreground: #DEDEDE
+.xfontsel.pane.fieldBox.field11.background: #2B4F98
+.xfontsel.pane.fieldBox.field11.foreground: #DEDEDE
+.xfontsel.pane.fieldBox.field12.background: #2B4F98
+.xfontsel.pane.fieldBox.field12.foreground: #DEDEDE
+.xfontsel.pane.fieldBox.field13.background: #2B4F98
+.xfontsel.pane.fieldBox.field13.foreground: #DEDEDE
+.xfontsel.pane.fieldBox*foreground: #000000
+.xfontsel.pane.fieldBox.MenuButton.borderWidth: 1
+.xfontsel.pane.fieldBox.MenuButton.internalHeight: 2
+.xfontsel.pane.fieldBox.MenuButton.internalWidth: 3
+
+! gnuplot
+gnuplot*background: white
+gnuplot*textColor: black
+gnuplot*borderColor: black
+gnuplot*axisColor: black
+gnuplot*line1Color: red
+gnuplot*line2Color: green
+gnuplot*line3Color: blue
+gnuplot*line4Color: magenta
+gnuplot*line5Color: cyan
+gnuplot*line6Color: sienna
+gnuplot*line7Color: orange
+gnuplot*line8Color: coral
+
+! Emacs
+Emacs.background: ivory
+Emacs.foreground: MidnightBlue
+
+Emacs.modeline*attributeForeground:     MidnightBlue
+Emacs.modeline*attributeBackground:     Bisque
+
+Emacs.text-cursor*attributeBackground:  Red3
+Emacs.pointer*attributeForeground:      Red3
+Emacs.pointer*attributeBackground:      Red3
+Emacs*menubar*Foreground:               MidnightBlue
+Emacs*menubar*Background:               Bisque1
+Emacs*popup*Foreground:                 MidnightBlue
+Emacs*popup*Background:                 Bisque1
+
+Emacs.default.attributeFont:  -adobe-courier-medium-r-*-*-12-*-*-*-*-*-iso8859-*
+
+! xpdf -----------------------------------------------------------------------
+
+xpdf*enableFreetype: True
+xpdf*antialias: True
+xpdf*Background: thistle4
+!xpdf*Background: light-blue
+xpdf*Foreground: Black
+xpdf.paperColor: White
+xpdf.matteColor: #D7D7D7
+!xpdf.matteColor: Tan
+xpdf.fullScreenMatteColor: #D7D7D7
+xpdf.initialZoom: width
+xpdf*geometry: 1100x800
+xpdf.enableT1lib: True
+!xpdf.t1libControl: none
+xpdf*urlCommand: /usr/bin/firefox %s
+xpdf.continuousView: True
+xpdf.toolTipEnable: true
+
+! xdvi ------------------------------------------------------------------------
+xdvi*font: -*-helvetica-medium-r-*-*-12-*-*-*-*-*-*-*
+xdvi*statusline*font: -*-helvetica-medium-r-*-*-11-*-*-*-*-*-*-*
+xdvi*toolbarButtonsRaised: True
+xdvi*button*fillOnArm: True
+xdvi*button*shadowThickness: 1
+xdvi*toolBar.marginHeight: 0
+xdvi*toolBarFrame.marginWidth: 0
+xdvi*button*highlightThickness: 2
+xdvi*buttonBorderWidth: 2
+!XDvi*thorough: true
+XDvi*foreground: #202020
+XDvi*background: White
+!xdvi*background: #D7D7D7
+!XDvi*underLink: true
+XDvi*pixelsPerInch: 1200
+XDvi*shrinkFactor: 8
+XDVI*font: ter-120b
+
+!## IDraw Preferences
+idraw.geometry: 850x870
+idraw.initialfont: 1
+idraw.initialbrush: 3
+idraw.initialpattern: 22
+idraw.initialfgcolor: 1
+idraw.initialbgcolor: 2
+
+idraw.font1:-*-helvetica-medium-r-*-*-12-*-*-*-*-*-*-* Helvetica 12
+idraw.font2:-*-helvetica-medium-o-*-*-12-*-*-*-*-*-*-* Helvetica-Oblique 12
+idraw.font3:-*-helvetica-bold-r-*-*-12-*-*-*-*-*-*-* Helvetica-Bold 12
+idraw.font4:-*-helvetica-medium-r-*-*-17-*-*-*-*-*-*-* Helvetica 17
+idraw.font5:-*-helvetica-medium-o-*-*-17-*-*-*-*-*-*-* Helvetica-Oblique 17
+idraw.font6:-*-helvetica-bold-r-*-*-17-*-*-*-*-*-*-* Helvetica-Bold 17
+idraw.font7:-*-helvetica-medium-r-*-*-24-*-*-*-*-*-*-* Helvetica 24
+idraw.font8:-*-helvetica-medium-o-*-*-24-*-*-*-*-*-*-* Helvetica-Oblique 24
+idraw.font9:-*-helvetica-bold-r-*-*-24-*-*-*-*-*-*-* Helvetica-Bold 24
+idraw.font10:-*-helvetica-medium-r-*-*-34-*-*-*-*-*-*-* Helvetica 34
+idraw.font11:-*-helvetica-medium-o-*-*-34-*-*-*-*-*-*-* Helvetica-Oblique 34
+idraw.font12:-*-helvetica-bold-r-*-*-34-*-*-*-*-*-*-* Helvetica-Bold 34
+idraw.font13:-*-times-medium-r-*-*-12-*-*-*-*-*-*-* Times-Roman 12
+idraw.font14:-*-times-medium-i-*-*-12-*-*-*-*-*-*-* Times-Italic 12
+idraw.font15:-*-times-bold-r-*-*-12-*-*-*-*-*-*-* Times-Bold 12
+idraw.font16:-*-times-medium-r-*-*-17-*-*-*-*-*-*-* Times-Roman 17
+idraw.font17:-*-times-medium-i-*-*-17-*-*-*-*-*-*-* Times-Italic 17
+idraw.font18:-*-times-bold-r-*-*-17-*-*-*-*-*-*-* Times-Bold 17
+idraw.font19:-*-times-medium-r-*-*-24-*-*-*-*-*-*-* Times-Roman 24
+idraw.font20:-*-times-medium-i-*-*-24-*-*-*-*-*-*-* Times-Italic 24
+idraw.font21:-*-times-bold-r-*-*-24-*-*-*-*-*-*-* Times-Bold 24
+idraw.font22:-*-times-medium-r-*-*-34-*-*-*-*-*-*-* Times-Roman 34
+idraw.font23:-*-times-medium-i-*-*-34-*-*-*-*-*-*-* Times-Italic 34
+idraw.font24:-*-times-bold-r-*-*-34-*-*-*-*-*-*-* Times-Bold 34
+idraw.font25:-*-symbol-*-*-*-*-12-*-*-*-*-*-*-* Symbol 12
+idraw.font26:-*-symbol-*-*-*-*-17-*-*-*-*-*-*-* Symbol 17
+idraw.font27:-*-symbol-*-*-*-*-24-*-*-*-*-*-*-* Symbol 24
+idraw.font28:-*-symbol-*-*-*-*-34-*-*-*-*-*-*-* Symbol 34
+
+idraw.brush1: 1111 1 0 0
+idraw.brush2: ff6f 1 0 0
+idraw.brush3: ffff 1 0 0
+idraw.brush4: ffff 2 0 0
+idraw.brush5: ffff 4 0 0
+idraw.brush6: f0f0 1 0 0
+idraw.brush7: f0f0 2 0 0
+idraw.brush8: f0f0 4 0 0
+idraw.brush9: ffff 1 1 0
+idraw.brush10: ffff 1 0 1
+idraw.brush11: ffff 1 1 1
+idraw.brush12: none
+
+idraw.pattern1: 0.0
+idraw.pattern2: 0.05
+idraw.pattern3: 0.1
+idraw.pattern4: 0.15
+idraw.pattern5: 0.2
+idraw.pattern6: 0.25
+idraw.pattern7: 0.3
+idraw.pattern8: 0.35
+idraw.pattern9: 0.4
+idraw.pattern10: 0.45
+idraw.pattern11: 0.5
+idraw.pattern12: 0.55
+idraw.pattern13: 0.6
+idraw.pattern14: 0.65
+idraw.pattern15: 0.7
+idraw.pattern16: 0.75
+idraw.pattern17: 0.8
+idraw.pattern18: 0.85
+idraw.pattern19: 0.9
+idraw.pattern20: 0.95
+idraw.pattern21: 1.0
+idraw.pattern22: none
+idraw.pattern23: 01 02 04 08 10 20 40 80
+idraw.pattern24: 80 40 20 10 08 04 02 01
+idraw.pattern25: 1248
+idraw.pattern26: 8421
+idraw.pattern27: f000
+idraw.pattern28: 8888
+idraw.pattern29: f888
+idraw.pattern30: 8525
+idraw.pattern31: cc33
+idraw.pattern32: 7bed
+
+idraw.fgcolor1: black
+idraw.fgcolor2: white
+idraw.fgcolor3: brown 41288 41288 32768
+idraw.fgcolor4: red 65535 0 0
+idraw.fgcolor5: orange 65535 41288 0
+idraw.fgcolor6: yellow-orange 65535 49807 0
+idraw.fgcolor7: yellow 65535 65535 0
+idraw.fgcolor8: yellow-green 49807 65535 0
+idraw.fgcolor9: lime-green 41288 65535 0
+idraw.fgcolor10: kelly-green 32768 65535 0
+idraw.fgcolor11: green 0 100 0
+idraw.fgcolor12: teal 0 65535 49807
+idraw.fgcolor13: cyan 0 65535 65535
+idraw.fgcolor14: blue 0 49807 65535
+idraw.fgcolor15: deep-blue 0 0 65535
+idraw.fgcolor16: indigo 32768 0 65535
+idraw.fgcolor17: purple 41288 0 65535
+idraw.fgcolor18: red-purple 49807 0 65535
+idraw.fgcolor19: magenta 65535 0 65535
+idraw.fgcolor20: salmon 65535 0 49807
+idraw.fgcolor21: green2 0 1 0
+
+idraw.bgcolor1: black
+idraw.bgcolor2: white
+idraw.bgcolor3: brown 41288 41288 32768
+idraw.bgcolor4: red 65535 0 0
+idraw.bgcolor5: orange 65535 41288 0
+idraw.bgcolor6: yellow-orange 65535 49807 0
+idraw.bgcolor7: yellow 65535 65535 0
+idraw.bgcolor8: yellow-green 49807 65535 0
+idraw.bgcolor9: lime-green 41288 65535 0
+idraw.bgcolor10: kelly-green 32768 65535 0
+idraw.bgcolor11: green 0 100 0
+idraw.bgcolor12: teal 0 65535 49807
+idraw.bgcolor13: cyan 0 65535 65535
+idraw.bgcolor14: blue 0 49807 65535
+idraw.bgcolor15: deep-blue 0 0 65535
+idraw.bgcolor16: indigo 32768 0 65535
+idraw.bgcolor17: purple 41288 0 65535
+idraw.bgcolor18: red-purple 49807 0 65535
+idraw.bgcolor19: magenta 65535 0 65535
+idraw.bgcolor20: salmon 65535 0 49807
+idraw.bgcolor21: green2 0 1 0

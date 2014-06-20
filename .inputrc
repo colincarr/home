@@ -1,0 +1,38 @@
+# .inputrc
+# Copyright (c) 2006, 2010 Colin Carr
+#
+set editing-mode emacs
+# incremental search using arrow keys
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+# because Apple is full tilt retarded
+#"\ep": history-search-backward
+#"\es": history-search-forward
+# bash C-u
+Control-u: universal-argument
+# WTF this is not working
+"\C-u": universal-argument
+
+# Magic Space
+$if Bash
+  Space: magic-space
+$endif
+
+# M-o load previous command and position point for an option
+"\M-o": "\C-p\C-a\M-f "
+
+set visible-stats on
+set match-hidden-files off
+set completion-ignore-case on
+
+# M-s cycle through <tab> options
+set show-all-if-ambiguous on
+"\M-s": menu-complete
+# iTerm again = set option to +ESC only seems to work overall
+"\es": menu-complete
+
+# UTF 
+set meta-flag on
+set input-meta on
+set output-meta on
+set convert-meta off
