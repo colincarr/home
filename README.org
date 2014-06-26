@@ -8,39 +8,40 @@
 
 $home for GNU and UNIX
 
-** BASH
-*** .bash_profile
+* BASH
+** .bash_profile
 *** .bashrc
 *** .profile
-*** .inputrc
+** .inputrc
 
-** Emacs
-*** conkeror
+* Emacs
+** conkeror
 
-** SBCL
-*** Slime
-*** StumpWM
-*** Xdefaults
-**** xinitrc
+* SBCL
+** Slime
+** StumpWM
+** Xdefaults
+*** xinitrc
 
-** Midnight Commander
-*** .config/mc
-*** zile
+* Midnight Commander
+** .config/mc
+** zile
 
-** TeX
-** Fonts
-*** True Type for TEX and OS
+* TeX
+* Fonts
+** True Type for TEX and OS
 
-** Python
-*** ipython
+* Python
+** ipython
 
-** eclim/eclipse
+* eclim/eclipse
 
 * GPG
 
 * SSH
 
 * UTILS
-*** GNU Screen
-**** .screenrc
-*** rtorrent
+** gnuit (GNU Interactive Tools)
+** GNU Screen
+*** .screenrc
+** rtorrent
