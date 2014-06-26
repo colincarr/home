@@ -24,6 +24,7 @@ $home for GNU and UNIX
 **** xinitrc
 
 ** Midnight Commander
+*** .config/mc
 *** zile
 
 ** TeX
@@ -40,4 +41,6 @@ $home for GNU and UNIX
 * SSH
 
 * UTILS
+*** GNU Screen
+**** .screenrc
 *** rtorrent
