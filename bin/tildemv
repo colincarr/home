@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# move Emacs backups to current dir
+
+find / -name '*~' -print0 | xargs -0 -I file mv file ./
