@@ -9,17 +9,15 @@
 $home for GNU and UNIX
 
 ** BASH
-
 *** .bash_profile
-
 *** .bashrc
-
 *** .profile
+*** .inputrc
+
 ** Emacs
 *** conkeror
 
 ** SBCL
-
 *** Slime
 *** StumpWM
 *** Xdefaults
@@ -29,14 +27,17 @@ $home for GNU and UNIX
 *** zile
 
 ** TeX
-
 ** Fonts
+*** True Type for TEX and OS
 
 ** Python
-
 *** ipython
 
 ** eclim/eclipse
+
 * GPG
 
 * SSH
+
+* UTILS
+*** rtorrent
