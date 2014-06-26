@@ -16,12 +16,17 @@ $home for GNU and UNIX
 
 *** .profile
 ** Emacs
+*** conkeror
 
 ** SBCL
 
 *** Slime
+*** StumpWM
+*** Xdefaults
+**** xinitrc
 
 ** Midnight Commander
+*** zile
 
 ** TeX
 
