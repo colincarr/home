@@ -1,5 +1,5 @@
 ;Copyright (C) 1987, 1997, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014 by Colin Carr
-; Time-stamp: <2014-06-25 21:04:22 cpc26>
+; Time-stamp: <2014-07-05 19:12:25 cpc26>
 ;; Author: Colin Carr
 ;;; .emacs --- Emacs Init File Simple
 ; -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-[  .emacs  ]-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
@@ -550,6 +550,7 @@ w3m-terminal-coding-system 'utf-8)
 ;    slime mode  M-M-x slime then lisp name (sbcl/abcl)
 ;    Clojure via Leiningen and Cider
 ; JAVASCRIPT
+;    Coffeescript
 ;    rest-client
 ;    JSlint
 ;    code folding
@@ -806,6 +807,20 @@ Including indent-buffer, which should not be called automatically on save."
 (load "js-expander.el") ; Parenscript Common Lisp
 ;
 ;;; J A V A S C R I P T - W E B
+;
+;C O F F E E S C R I P T
+;; coffeescript
+(custom-set-variables
+ '(coffee-tab-width 2)
+ '(coffee-args-compile '("-c" "--bare")))
+
+(eval-after-load "coffee-mode"
+  '(progn
+     (define-key coffee-mode-map [(meta r)] 'coffee-compile-buffer)
+     (define-key coffee-mode-map (kbd "C-j") 'coffee-newline-and-indent)))
+;; My Coffee AC Source
+(add-to-list 'load-path "~/.emacs.d/ac-coffee/")
+(require 'ac-coffee)
 ;
 ; R E S T
 (add-to-list 'load-path "~/.emacs.d/restclient.el")
