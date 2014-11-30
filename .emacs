@@ -1,5 +1,5 @@
 ;Copyright (C) 1987, 1997, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014 by Colin Carr
-; Time-stamp: <2014-11-27 20:45:14 cpc26>
+; Time-stamp: <2014-11-30 12:05:47 cpc26>
 ;; Author: Colin Carr
 ;;; .emacs --- Emacs Init File Simple
 ; -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-[  .emacs  ]-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
@@ -105,10 +105,24 @@
 (message "[✓]  cl loaded")
 ; Packages
 (require 'package)
-(package-initialize)                ;; Initialize & Install Package
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 (add-to-list 'package-archives
   '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(package-initialize)                ;; Initialize & Install Package
+(setq url-http-attempt-keepalives nil)
+(defvar cpc26-packages
+  '(ac-emmet auto-complete popup emmet-mode ac-geiser auto-complete popup geiser ac-js2 skewer-mode js2-mode simple-httpd js2-mode auctex buffer-move coffee-mode color-theme-solarized color-theme css-eldoc dash-functional dash dired+ edbi epc ctable concurrent deferred ctable concurrent deferred emmet-mode flymake-jslint flymake-easy geiser htmlize indicators jedi python-environment deferred auto-complete popup epc ctable concurrent deferred magit git-rebase-mode git-commit-mode markup-faces minimap nodejs-repl org org-eldoc paredit paredit-menu persp-projectile projectile pkg-info epl dash f dash s s perspective perspective popup pretty-symbols projectile pkg-info epl dash f dash s s python-environment deferred quelpa package-build s skewer-mode js2-mode simple-httpd smex solarized-theme dash ac-html w3 web-beautify web-mode wordsmith-mode yasnippet yasnippet-bundle)
+  "Check packages for emacs.")
+(defun cpc26-packages-installed-p ()
+  (loop for p in cpc26-packages
+        when (not (package-installed-p p)) do (return nil)
+        finally (return t)))
+(unless (cpc26-packages-installed-p)
+  (package-refresh-contents)
+  ;; install the missing packages
+  (dolist (p cpc26-packages)
+    (when (not (package-installed-p p))
+      (package-install p))))
 (message "=[QUELPA COMPILES AND UPDATES]=======================================")
 ; QUELPA
 ;(if (require 'quelpa nil t)
