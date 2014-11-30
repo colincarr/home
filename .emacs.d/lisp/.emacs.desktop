@@ -1,0 +1,173 @@
+;; -*- mode: emacs-lisp; coding: emacs-mule; -*-
+;; --------------------------------------------------------------------------
+;; Desktop File for Emacs
+;; --------------------------------------------------------------------------
+;; Created Thu Nov 27 16:34:34 2014
+;; Desktop file format version 206
+;; Emacs version 24.4.1
+
+;; Global section:
+(setq desktop-saved-frameset [frameset 1 (21623 39146 873917 0) (desktop . "206") "cpc26@localhost" nil nil ((((font-backend mac-ct ns) (fontsize . 0) (font . "-*-Menlo-normal-normal-normal-*-12-*-*-*-m-0-iso10646-1") (border-width . 0) (internal-border-width . 2) (vertical-scroll-bars . right) (foreground-color . "#52676f") (background-color . "#fcf4dc") (line-spacing) (left-fringe . 10) (right-fringe . 11) (menu-bar-lines . 1) (tool-bar-lines . 1) (title) (icon-type) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 15) (alpha 100 100) (fullscreen) (horizontal-scroll-bars . t) (display-type . color) (background-mode . light) (cursor-color . "#52676f") (environment) (persp-modestring "[" "main" "]") (persp-recursive) (persp-last) (persp-curr . [cl-struct-perspective "main" ("Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity") nil nil ("*scratch*" "app.js<2>" "pretty-symbols.el" "*Help*" "GoalsList.js" "*Packages*" "testing" "hw_home_page_0.html" "hw_home_page_2.html" "index.html" "hw_home_page_0.html" "scratch" ".emacs" "scratch" "*Help*" "scratch" "config" "README" "*Packages*" "www" "scratch" "index.html" "goals.js" "*slime-scratch*" ".emacs" "*scratch*" "*Help*" "keller" "*Customize Group: Dired Plus*") "Unprintable entity"]) (perspectives-hash . "Unprintable entity") (frameset--id . "47D8-E0E0-0BFB-9B15") (frameset--mini t . t) (modeline . t) (minibuffer . t) (unsplittable) (right-divider-width . 0) (bottom-divider-width . 0) (icon-name) (visibility . t) (display . "localhost") (explicit-name) (tool-bar-position . top) (height . 58) (width . 200) (left + -1) (top . 22)) ((min-height . 8) (min-width . 10) (min-height-ignore . 8) (min-width-ignore . 8) (min-height-safe . 2) (min-width-safe . 2) (min-pixel-height . 112) (min-pixel-width . 70) (min-pixel-height-ignore . 112) (min-pixel-width-ignore . 56) (min-pixel-height-safe . 28) (min-pixel-width-safe . 14)) vc (pixel-width . 1436) (pixel-height . 798) (total-width . 205) (total-height . 57) (normal-height . 1.0) (normal-width . 1.0) (combination-limit) (leaf (pixel-width . 1436) (pixel-height . 406) (total-width . 205) (total-height . 29) (normal-height . 0.5) (normal-width . 1.0) (buffer "*Messages*" (selected) (hscroll . 0) (fringes 10 11 nil) (margins 3) (scroll-bars 15 3 t nil) (vscroll . 0) (dedicated) (point . 6621) (start . 6211))) (leaf (last . t) (pixel-width . 1436) (pixel-height . 392) (total-width . 205) (total-height . 28) (normal-height . 0.5) (normal-width . 1.0) (buffer ".emacs" (selected . t) (hscroll . 0) (fringes 10 11 nil) (margins 4) (scroll-bars 15 3 t nil) (vscroll . 0) (dedicated) (point . 1951) (start . 1578)))))])
+(setq desktop-missing-file-warning nil)
+(setq tags-file-name nil)
+(setq tags-table-list '("/Users/cpc26/src/haxen/javascript/exchanges/TAGS"))
+(setq search-ring '("desktop" "ido" "virtua" "js-c" "multiple" ".el" "re-bui" "fuzzy" "~/.emacs.d/" "!" "load-path" "editor" "tab" "emacs.d" "yas" "pretty-sym"))
+(setq regexp-search-ring '("\\.\\(GIF\\|JP\\(?:E?G\\)\\|P\\(?:BM\\|GM\\|N[GM]\\|PM\\)\\|SVG\\|TIFF?\\|X\\(?:[BP]M\\)\\|gif\\|jp\\(?:e?g\\)\\|p\\(?:bm\\|gm\\|n[gm]\\|pm\\)\\|svg\\|tiff?\\|x\\(?:[bp]m\\)\\)\\'" "lock"))
+(setq register-alist (list (list 13 '(frame-configuration ("Unprintable entity" ((tool-bar-position . top) (parent-id) (explicit-name) (display . "localhost") (visibility . t) (icon-name) (window-id . "1") (top . 22) (left + -1) (buried-buffer-list "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity") (buffer-list "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity" "Unprintable entity") (unsplittable) (minibuffer . "Unprintable entity") (modeline . t) (width . 200) (height . 60) (name . "localhost :  *ielm*") (tabbar-cache . "Unprintable entity") (environment) (cursor-color . "black") (background-mode . light) (display-type . color) (horizontal-scroll-bars . t) (window-system . ns) (fullscreen) (alpha 85 50) (scroll-bar-width . 15) (cursor-type . box) (auto-lower) (auto-raise) (icon-type) (title) (buffer-predicate) (tool-bar-lines . 0) (menu-bar-lines . 1) (right-fringe . 11) (left-fringe . 10) (line-spacing) (background-color . "White") (foreground-color . "Black") (vertical-scroll-bars . right) (internal-border-width . 2) (border-width . 0) (font . "-apple-Menlo-medium-normal-normal-*-12-*-*-*-m-0-iso10646-1") (fontsize . 0) (font-backend ns)) "Unprintable entity")) (let ((mk (make-marker))) (add-hook 'desktop-delay-hook `(lambda nil (set-marker ,mk ,nil (get-buffer ," *temp*")))) mk))))
+(setq file-name-history '("/Users/cpc26/Dropbox/Quarterly/src/android/quarterly/www/js/app/views/GoalsList.js" "~/tmp/testing/" "~/tmp/testing/hw_home_page_0.html" "~/tmp/testing/" "~/tmp/testing/hw_home_page_2.html" "~/tmp/testing/hw_home_page_0.html" "~/tmp/testing/" "~/tmp/scratch/" "~/Pictures/" "/Users/cpc26/.emacs" "/Users/cpc26/src/haxen/javascript/exchanges/js/vendor/jquery/jquery.min.js" "/Users/cpc26/src/haxen/javascript/exchanges/js/vendor/jquery/jquery.js" "/Users/cpc26/tmp/getops.sh" "/Users/cpc26/src/haxen/javascript/ap108993_nb_tablet_web/www/index.html" "/Users/cpc26/Downloads/Ex_Files_UaR_Backbone/ExerciseFiles/06/02/final/public/js/app.js" "/Users/cpc26/.bash_profile" "~/Dropbox/Quarterly/src/android/quarterly/www/" "/Users/cpc26/Dropbox/Quarterly/src/android/quarterly/www/js/require.js" "/Users/cpc26/.slime-scratch.lisp" "/Users/cpc26/Dropbox/Quarterly/src/android/quarterly/www/js/tpl/GoalsList.html" "/Users/cpc26/Dropbox/Quarterly/src/android/quarterly/www/js/app/views/GoalsList.js" "/Users/cpc26/Dropbox/Quarterly/src/android/quarterly/www/css/index.css" "/Users/cpc26/Dropbox/Quarterly/src/android/quarterly/www/js/tpl/Home.html" "/Users/cpc26/Dropbox/Quarterly/src/android/quarterly/www/js/app/views/Home.js" "/Users/cpc26/Dropbox/Quarterly/src/android/quarterly/www/js/app/router.js" "/Users/cpc26/Dropbox/Quarterly/src/android/quarterly/www/js/app/models/memory/goals.js" "/Users/cpc26/Dropbox/Quarterly/src/android/quarterly/www/js/app.js" "/Users/cpc26/.emacs" "~/Dropbox/Quarterly/src/android/quarterly/www/index.html" "~/.emacs.d/emacs-nav-49/nav.el"))
+
+;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 206
+  "/Users/cpc26/.emacs"
+  ".emacs"
+  'emacs-lisp-mode
+  '(linum-mode projectile-mode auto-complete-mode rainbow-delimiters-mode eldoc-mode yas-minor-mode paredit-mode flyspell-mode pretty-symbols-mode)
+  1951
+  '(8005 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/Users/cpc26/Dropbox/Quarterly/src/android/quarterly/www/js/app/router.js"
+  "router.js"
+  'js2-mode
+  '(linum-mode projectile-mode auto-complete-mode rainbow-delimiters-mode yas-minor-mode slime-js-minor-mode flymake-mode flyspell-mode skewer-mode js2-imenu-extras-mode)
+  1131
+  '(1131 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/Users/cpc26/Dropbox/Quarterly/src/android/quarterly/www/js/app/views/GoalsList.js"
+  "GoalsList.js"
+  'js2-mode
+  '(linum-mode projectile-mode auto-complete-mode rainbow-delimiters-mode yas-minor-mode slime-js-minor-mode flymake-mode flyspell-mode skewer-mode js2-imenu-extras-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/Users/cpc26/src/haxen/javascript/exchanges/js/vendor/jquery/jquery.js"
+  "jquery.js"
+  'js2-mode
+  '(linum-mode projectile-mode auto-complete-mode rainbow-delimiters-mode yas-minor-mode slime-js-minor-mode flymake-mode flyspell-mode pretty-symbols-mode skewer-mode js2-imenu-extras-mode)
+  5063
+  '(1 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/Users/cpc26/Dropbox/Quarterly/src/android/quarterly/www/js/app.js"
+  "app.js"
+  'js2-mode
+  '(linum-mode projectile-mode auto-complete-mode rainbow-delimiters-mode yas-minor-mode slime-js-minor-mode flymake-mode flyspell-mode skewer-mode js2-imenu-extras-mode)
+  668
+  '(209 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/Users/cpc26/Dropbox/Quarterly/src/android/quarterly/www/js/app/models/memory/goals.js"
+  "goals.js"
+  'js2-mode
+  '(linum-mode projectile-mode auto-complete-mode rainbow-delimiters-mode yas-minor-mode slime-js-minor-mode flymake-mode flyspell-mode skewer-mode js2-imenu-extras-mode)
+  2295
+  '(3086 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/Users/cpc26/Dropbox/Quarterly/src/android/quarterly/www/js/app/views/Home.js"
+  "Home.js"
+  'js2-mode
+  '(linum-mode projectile-mode auto-complete-mode rainbow-delimiters-mode yas-minor-mode slime-js-minor-mode flymake-mode flyspell-mode skewer-mode js2-imenu-extras-mode)
+  980
+  '(311 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  nil
+  "*info*"
+  'Info-mode
+  '(linum-mode projectile-mode rainbow-delimiters-mode)
+  607473
+  '(1 nil)
+  t
+  '("/Applications/Emacs.app/Contents/Resources/info/emacs" "Coding Systems" ((history ("/Applications/Emacs.app/Contents/Resources/info/emacs" "Top" 22003) ("/Applications/Emacs.app/Contents/Resources/info/emacs" "Customization" 1416057) ("/Applications/Emacs.app/Contents/Resources/info/emacs" "Init File" 1501360) ("/Applications/Emacs.app/Contents/Resources/info/emacs" "Init Examples" 1506455) ("/Applications/Emacs.app/Contents/Resources/info/emacs" "Terminal Init" 1510295) ("/Applications/Emacs.app/Contents/Resources/info/emacs" "Top" 48634) ("dir" "Top" 922))))
+  '((tab-width . 8) (buffer-file-coding-system . iso-latin-1-unix) (case-fold-search . t)))
+
+(desktop-create-buffer 206
+  "/Users/cpc26/Dropbox/Quarterly/src/android/quarterly/www/index.html"
+  "index.html"
+  'web-mode
+  '(linum-mode projectile-mode rainbow-delimiters-mode flyspell-mode emmet-mode)
+  316
+  '(382 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/Users/cpc26/Dropbox/Quarterly/src/android/quarterly/www/js/tpl/Home.html"
+  "Home.html"
+  'web-mode
+  '(linum-mode projectile-mode rainbow-delimiters-mode flyspell-mode emmet-mode)
+  591
+  '(519 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/Users/cpc26/.slime-scratch.lisp"
+  "*slime-scratch*"
+  'lisp-mode
+  '(linum-mode projectile-mode auto-complete-mode rainbow-delimiters-mode eldoc-mode paredit-mode slime-mode flyspell-mode)
+  13494
+  '(13494 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/Users/cpc26/Dropbox/Quarterly/src/android/quarterly/www/js/tpl/GoalsList.html"
+  "GoalsList.html"
+  'web-mode
+  '(linum-mode projectile-mode rainbow-delimiters-mode flyspell-mode emmet-mode)
+  274
+  '(147 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/Users/cpc26/Dropbox/Quarterly/src/android/quarterly/www/css/index.css"
+  "index.css"
+  'css-mode
+  '(linum-mode projectile-mode auto-complete-mode rainbow-delimiters-mode eldoc-mode yas-minor-mode emmet-mode skewer-css-mode)
+  2005
+  '(5441 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/Users/cpc26/tmp/job/fidelity.org"
+  "fidelity.org"
+  'org-mode
+  '(linum-mode projectile-mode rainbow-delimiters-mode eldoc-mode flyspell-mode)
+  8910
+  '(8312 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix) (truncate-lines . t)))
+

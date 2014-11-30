@@ -1,5 +1,5 @@
 ;Copyright (C) 1987, 1997, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014 by Colin Carr
-; Time-stamp: <2014-07-05 19:12:25 cpc26>
+; Time-stamp: <2014-11-27 20:45:14 cpc26>
 ;; Author: Colin Carr
 ;;; .emacs --- Emacs Init File Simple
 ; -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-[  .emacs  ]-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
@@ -23,6 +23,7 @@
 ;;;; GLOBAL
 ;
 ; exec-paths for local and Fink
+; Info path for local and Fink
 ; X11 - set display OSX
 ; Bucky bits - C-xC-m for M-x and mdfind for locate
 ;    OSX fn is Super
@@ -42,7 +43,9 @@
 ;*---------------------------------------------------------------------*/
 (message "[✓]  Start Global")
 ;
-(add-to-list 'load-path "~/.emacs.d/")
+(add-to-list 'load-path "~/.emacs.d/lisp/")
+(add-to-list 'load-path "~/.emacs.d/tabbar/")
+(add-to-list 'load-path "~/opt/sublimity/")
 ; X11
 (setenv "DISPLAY" ":0")
 ;
@@ -53,6 +56,9 @@
 (setq exec-path (append exec-path '("/sw/bin")))
 (setq exec-path (append exec-path '("/Users/cpc26/bin")))
 (setq exec-path (append exec-path '("/usr/local/go/bin")))
+; Infopath
+(add-to-list 'Info-default-directory-list "sw/info")
+(add-to-list 'Info-default-directory-list "/sw/share/info")
 ;;; OS X NOTES
 ;;    C-SPC is set-mark-command BUT if you use iTERM2 set C-CMD-SPC for SHOW/HIDE
 ;; command symbol (⌘) on Mac OS X  or LOOPED SQUARE,  CMD, pretzel key, clover
@@ -196,28 +202,35 @@
 ; dired mode
 ; Indicators - displaying fringe indicators
 ; Minimap
+; emacs-nav
 ;
 ;;;;
 ;*---------------------------------------------------------------------*/
 (message "[✓]  Start UI")
 ;
+(global-hl-line-mode)
+;
 (message "[✓]  set default size")
 (setq default-frame-alist
         (append '((top . 0) (left . -1) (width . 200) (height . 60))
                 default-frame-alist))
-;
-; Soalrize
-;(load-theme 'solarized-[light|dark] t)
+;; Solarize
+;(load-theme 'tsdh-light)
+;(load-theme 'tdsh-dark)
+;(load-theme 'solarized-light 'solarized-dark t)
 ;(load-theme 'solarized-light)
 ;(load-theme 'solarized-dark)
 (require 'theme-changer)
-(change-theme 'solarized-light 'solarized-dark)
+;(change-theme 'solarized-light 'solarized-dark)
+(change-theme 'tsdh-light 'misterioso)
 ;
 (require 'e2wm)
 (global-set-key (kbd "M-+") 'e2wm:start-management)
 (message "[✓]  E2WM")
 (require 'ido)
-(ido-mode t)
+(setq ido-everywhere t)
+(ido-mode 1)
+;(ido-mode 'buffers)
 (message "[✓]  ido mode")
 (global-set-key "\C-x\C-b" 'ibuffer)
 (message "[✓]  ibuffer")
@@ -336,7 +349,7 @@ w3m-terminal-coding-system 'utf-8)
 ;;; If you want this functionality, you can use
 ;;;   https://github.com/zk-phi/phi-search
 ;;;
-(add-to-list 'load-path "~/.emacs.d/multiple-cursors.el")
+(add-to-list 'load-path "~/.emacs.d/multiple-cursors.el/")
 (require 'multiple-cursors)
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
@@ -349,7 +362,8 @@ w3m-terminal-coding-system 'utf-8)
 (message "[✓]  multiple-cursors.el")
 ; O-O-O-O-O-O-O-O-O-O-O-O-O-( DIRED-MODE )-O-O-O-O-O-O-O-O-O-O-O-O-O
 ;
-(require 'dired )
+;(require 'dired )
+(require 'dired+)
 (define-key dired-mode-map (kbd "<return>") 'dired-find-alternate-file) ; was dired-advertised-find-file
 (define-key dired-mode-map (kbd "^") (lambda () (interactive) (find-alternate-file "..")))  ; was dired-up-directory
 (message "[✓]  dired mode")
@@ -392,6 +406,18 @@ w3m-terminal-coding-system 'utf-8)
 ;(sublimity-mode 1)
 ;
 (message "[✓]  minimap and sublimity")
+;
+(add-to-list 'load-path "~/.emacs.d/emacs-nav-49/")
+(require 'nav)
+(nav-disable-overeager-window-splitting)
+;; Optional: set up a quick key to toggle nav
+;; (global-set-key [f8] 'nav-toggle)
+;; # Navigate!
+;; Type M-x nav to start navigating.
+;; In the nav window, hit ? to get help on keyboard shortcuts.
+;; To set options for Nav, type M-x customize, then select Applications,
+;; Nav.
+(message "[✓]  emacs-nav")
 ;
 (message "[✓]  End UI")
 (message "*****")
@@ -494,8 +520,8 @@ w3m-terminal-coding-system 'utf-8)
 ; o-blog
 ;Open the ~/.emacs.d/o-blog/example/sample.org file and type M-x org-publish-blog. \
 ;The result site would be published by default in ~/.emacs.d/o-blog/out.
-(add-to-list 'load-path "~/.emacs.d/adoc-mode")
-(add-to-list 'load-path "~/.emacs.d/o-blog")
+(add-to-list 'load-path "~/.emacs.d/adoc-mode/")
+(add-to-list 'load-path "~/.emacs.d/o-blog/")
 (require 'adoc-mode)
 (require 'o-blog)
 (message "[✓]  o-blog")
@@ -550,6 +576,7 @@ w3m-terminal-coding-system 'utf-8)
 ;    slime mode  M-M-x slime then lisp name (sbcl/abcl)
 ;    Clojure via Leiningen and Cider
 ; JAVASCRIPT
+;    Sass
 ;    Coffeescript
 ;    rest-client
 ;    JSlint
@@ -624,14 +651,14 @@ Including indent-buffer, which should not be called automatically on save."
 ;; C-c p C-h
 ;
 ;;; PERSPECTIVE -
-(persp-mode)
-(require 'persp-projectile)
+;(persp-mode)
+;(require 'persp-projectile)
 ;
 (message "[✓]  Projectile")
 ; auto-complete
-(add-to-list 'load-path "~/.emacs.d/")
+;(add-to-list 'load-path "~/.emacs.d/")
 (require 'auto-complete-config)
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict/")
 ; Use dictionaries by default
 ;(setq-default ac-sources (add-to-list 'ac-sources 'ac-source-dictionary))
 (ac-config-default)
@@ -701,11 +728,35 @@ Including indent-buffer, which should not be called automatically on save."
 ;(yas-global-mode t)
 ;; Develop and keep personal snippets under ~/.emacs.d/snippets
 (require 'yasnippet)
-(yas/initialize)
+;(yas/initialize)
 (setq yas/root-directory "/Users/cpc26/.emacs.d/snippets")
 ;; Load the snippets
 (yas/load-directory yas/root-directory)
 ;(define-key yas-minor-mode-map (kbd "<C-tab>") 'yas-expand)
+;(yas-global-mode 1) ;; or M-x yas-reload-all if you've started YASnippet already.
+;; Completing point by some yasnippet key
+(defun yas-ido-expand ()
+  "Lets you select (and expand) a yasnippet key"
+  (interactive)
+    (let ((original-point (point)))
+      (while (and
+              (not (= (point) (point-min) ))
+              (not
+               (string-match "[[:space:]\n]" (char-to-string (char-before)))))
+        (backward-word 1))
+    (let* ((init-word (point))
+           (word (buffer-substring init-word original-point))
+           (list (yas-active-keys)))
+      (goto-char original-point)
+      (let ((key (remove-if-not
+                  (lambda (s) (string-match (concat "^" word) s)) list)))
+        (if (= (length key) 1)
+            (setq key (pop key))
+          (setq key (ido-completing-read "key: " list nil nil word)))
+        (delete-char (- init-word original-point))
+        (insert key)
+        (yas-expand)))))
+;(define-key yas-minor-mode-map (kbd "<C-tab>") 'yas-ido-expand)
 (message "[✓]  YAS")
 ; GCC MODES
 (add-hook 'shell-mode-hook 'compilation-shell-minor-mode)
@@ -808,11 +859,42 @@ Including indent-buffer, which should not be called automatically on save."
 ;
 ;;; J A V A S C R I P T - W E B
 ;
+; SASS
+;(add-to-list 'load-path (expand-file-name "~/.emacs.d/highlight-indentation.el"))
+(autoload 'highlight-indentation "highlight-indentation")
+(require 'highlight-indentation )
+;(add-to-list 'load-path (expand-file-name "~/.emacs.d/scss-mode.el"))
+(autoload 'scss-mode "scss-mode")
+(add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
 ;C O F F E E S C R I P T
 ;; coffeescript
 (custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(coffee-args-compile (quote ("-c" "--bare")))
  '(coffee-tab-width 2)
- '(coffee-args-compile '("-c" "--bare")))
+ '(column-number-mode t)
+ '(custom-safe-themes
+   (quote
+    ("d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6" "1e7e097ec8cb1f8c3a912d7e1e0331caeed49fef6cff220be63bd2a6ba4cc365" default)))
+ '(diredp-auto-focus-frame-for-thumbnail-tooltip-flag t)
+ '(diredp-image-preview-in-tooltip 100)
+ '(display-battery-mode t)
+ '(display-time-mode t)
+ '(ecb-layout-window-sizes nil)
+ '(ecb-options-version "2.40")
+ '(geiser-guile-binary "guile-2.0")
+ '(indicate-buffer-boundaries (quote left))
+ '(indicate-empty-lines t)
+ '(send-mail-function (quote mailclient-send-it))
+ '(show-paren-mode t)
+ '(size-indication-mode t)
+ '(slime-js-swank-args nil)
+ '(slime-js-swank-command "/usr/local/bin/swank-js")
+ '(tool-bar-mode nil)
+ '(virtualenv-root "~/src/haxen/python/"))
 
 (eval-after-load "coffee-mode"
   '(progn
@@ -823,7 +905,7 @@ Including indent-buffer, which should not be called automatically on save."
 (require 'ac-coffee)
 ;
 ; R E S T
-(add-to-list 'load-path "~/.emacs.d/restclient.el")
+(add-to-list 'load-path "~/.emacs.d/restclient.el/")
 (require 'restclient)
 ;
 (message "[✓]  Start App Dev:: JavaScript")
@@ -836,21 +918,22 @@ Including indent-buffer, which should not be called automatically on save."
 (setq js2-highlight-level 3)
 ;
 ; syntax checking - Lintnode (in .emac.d dir)
+;(add-to-list 'interpreter-mode-alist '("node" . js2-mode))
 ; JSLint to integrate with Flymake – the Emacs solution for on-the-fly syntax
-(add-to-list 'interpreter-mode-alist '("node" . js2-mode))
 (message "[✓]  Start App Dev:: JavaScript::JSLint")
-;; (add-hook 'js-mode-hook 'js2-minor-mode)
-(add-to-list 'load-path "~/.emacs.d/lintnode")
 (require 'flymake-jslint)
+(add-hook 'js-mode-hook 'flymake-jslint-load)
+(add-hook 'js2-mode-hook 'flymake-jslint-load)
+;; (add-hook 'js-mode-hook 'js2-minor-mode)
+;(add-to-list 'load-path "~/.emacs.d/lintnode")
 ;; Make sure we can find the lintnode executable
-(setq lintnode-location "~/.emacs.d/lintnode")
+;(setq lintnode-location "~/.emacs.d/lintnode")
 ;; JSLint can be... opinionated
-(setq lintnode-jslint-excludes (list 'nomen 'undef 'plusplus 'onevar 'white))
+;(setq lintnode-jslint-excludes (list 'nomen 'undef 'plusplus 'onevar 'white))
 ;; Start the server when we first open a js file and start checking
-;(add-hook 'js-mode-hook 'flymake-jslint-load)
-(add-hook 'js-mode-hook
-          (lambda ()
-            (lintnode-hook)))
+;(add-hook 'js-mode-hook
+;(lambda ()
+;  (lintnode-hook)))
 ;(add-hook 'javascript-mode-hook
 ;          (lambda () (lintnode-hook)))
 ; code folding
@@ -892,7 +975,7 @@ Including indent-buffer, which should not be called automatically on save."
 ;;Type M-x nodejs-repl to run Node.js REPL.
 (message "[✓]  -=-=-=-=-=-=-=-=- nodejs-repl")
 (setenv "NODE_NO_READLINE" "1")
-(add-to-list 'load-path "~/.emacs.d/js-comint")
+;(add-to-list 'load-path "~/.emacs.d/lisp/js-comint")
 (require 'js-comint)
 ;; Use node as our repl
 (setq inferior-js-program-command "node")
@@ -1261,27 +1344,7 @@ Including indent-buffer, which should not be called automatically on save."
 ; ---------------DO NOT EDIT BELOW-----------------------------
 ;;
 ;;
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(column-number-mode t)
- '(custom-safe-themes (quote ("fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6" "1e7e097ec8cb1f8c3a912d7e1e0331caeed49fef6cff220be63bd2a6ba4cc365" default)))
- '(display-battery-mode t)
- '(display-time-mode t)
- '(ecb-layout-window-sizes nil)
- '(ecb-options-version "2.40")
- '(geiser-guile-binary "guile-2.0")
- '(indicate-buffer-boundaries (quote left))
- '(indicate-empty-lines t)
- '(send-mail-function (quote mailclient-send-it))
- '(show-paren-mode t)
- '(size-indication-mode t)
- '(slime-js-swank-args nil)
- '(slime-js-swank-command "/usr/local/bin/swank-js")
- '(tool-bar-mode nil)
- '(virtualenv-root "~/src/haxen/python/"))
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
